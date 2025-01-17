@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.199" />
+        <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/drawable-v24/switch_thumb_selector.xml" value="0.2275" />
+        <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/drawable-v24/switch_track_selector.xml" value="0.1675" />
+        <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/drawable/account.xml" value="0.124" />
+        <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/drawable/border.xml" value="0.199" />
+        <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/drawable/button_d.xml" value="0.124" />
+        <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/drawable/card_background.xml" value="0.2275" />
+        <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/drawable/darker_background_with_border.xml" value="0.124" />
+        <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/drawable/edittext_background.xml" value="0.124" />
+        <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/drawable/enciklopedija.xml" value="0.199" />
+        <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/drawable/forum.xml" value="0.199" />
+        <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/drawable/hexagon_shape.xml" value="0.199" />
+        <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/drawable/ic_launcher_background.xml" value="0.199" />
+        <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/drawable/icon.xml" value="0.199" />
+        <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/drawable/iconApp_background.xml" value="0.1675" />
+        <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/drawable/icon_tint.xml" value="0.199" />
+        <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/drawable/organizator.xml" value="0.199" />
+        <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/drawable/spinner_background.xml" value="0.199" />
+        <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/layout/activity_book.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/layout/activity_pocetna.xml" value="0.264" />
+        <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/layout/card_background.xml" value="0.14427083333333332" />
+        <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/layout/colors.xml" value="0.14427083333333332" />
+        <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/layout/edittext_background.xml" value="0.14427083333333332" />
+        <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/layout/item_book.xml" value="0.4" />
+        <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/layout/switch_track_selector.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/menu/bottom_nav_menu.xml" value="0.15833333333333333" />
+        <entry key="..\:/Users/user/Desktop/Mapa/BuzzKeeper/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.192" />
+        <entry key="..\:/Users/user/Desktop/Mapa/BuzzKeeper/app/src/main/res/drawable/account.xml" value="0.192" />
+        <entry key="..\:/Users/user/Desktop/Mapa/BuzzKeeper/app/src/main/res/drawable/bottom_nav_background.xml" value="0.192" />
+        <entry key="..\:/Users/user/Desktop/Mapa/BuzzKeeper/app/src/main/res/drawable/button_d.xml" value="0.307" />
+        <entry key="..\:/Users/user/Desktop/Mapa/BuzzKeeper/app/src/main/res/drawable/darker_background_with_border.xml" value="0.1935" />
+        <entry key="..\:/Users/user/Desktop/Mapa/BuzzKeeper/app/src/main/res/drawable/enciklopedija.xml" value="0.192" />
+        <entry key="..\:/Users/user/Desktop/Mapa/BuzzKeeper/app/src/main/res/drawable/forum.xml" value="0.192" />
+        <entry key="..\:/Users/user/Desktop/Mapa/BuzzKeeper/app/src/main/res/drawable/hexagon_shape.xml" value="0.3145" />
+        <entry key="..\:/Users/user/Desktop/Mapa/BuzzKeeper/app/src/main/res/drawable/ic_dizajn_bez_naslova__1_.xml" value="0.192" />
+        <entry key="..\:/Users/user/Desktop/Mapa/BuzzKeeper/app/src/main/res/drawable/ic_dizajn_bez_naslova__2_.xml" value="0.192" />
+        <entry key="..\:/Users/user/Desktop/Mapa/BuzzKeeper/app/src/main/res/drawable/ic_dizajn_bez_naslova__3_.xml" value="0.192" />
+        <entry key="..\:/Users/user/Desktop/Mapa/BuzzKeeper/app/src/main/res/drawable/ic_dizajn_bez_naslova__4_.xml" value="0.192" />
+        <entry key="..\:/Users/user/Desktop/Mapa/BuzzKeeper/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1935" />
+        <entry key="..\:/Users/user/Desktop/Mapa/BuzzKeeper/app/src/main/res/drawable/icon.xml" value="0.192" />
+        <entry key="..\:/Users/user/Desktop/Mapa/BuzzKeeper/app/src/main/res/drawable/icon_tint.xml" value="0.192" />
+        <entry key="..\:/Users/user/Desktop/Mapa/BuzzKeeper/app/src/main/res/drawable/organizator.xml" value="0.192" />
+        <entry key="..\:/Users/user/Desktop/Mapa/BuzzKeeper/app/src/main/res/drawable/spinner_background.xml" value="0.307" />
+        <entry key="..\:/Users/user/Desktop/Mapa/BuzzKeeper/app/src/main/res/drawable/white_background_with_border.xml" value="0.1935" />
+        <entry key="..\:/Users/user/Desktop/Mapa/BuzzKeeper/app/src/main/res/layout/activity_home.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/user/Desktop/Mapa/BuzzKeeper/app/src/main/res/layout/activity_loading.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/user/Desktop/Mapa/BuzzKeeper/app/src/main/res/layout/activity_lunch.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/user/Desktop/Mapa/BuzzKeeper/app/src/main/res/layout/activity_main.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/user/Desktop/Mapa/BuzzKeeper/app/src/main/res/layout/fragment_home.xml" value="0.18125" />
+        <entry key="..\:/Users/user/Desktop/Mapa/BuzzKeeper/app/src/main/res/layout/fragment_language.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/user/Desktop/Mapa/BuzzKeeper/app/src/main/res/layout/fragment_login.xml" value="0.33" />
+        <entry key="..\:/Users/user/Desktop/Mapa/BuzzKeeper/app/src/main/res/layout/fragment_sing_up.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/user/Desktop/Mapa/BuzzKeeper/app/src/main/res/layout/item_pcelinjak.xml" value="0.346875" />
+        <entry key="..\:/Users/user/Desktop/Mapa/BuzzKeeper/app/src/main/res/menu/bottom_nav_menu.xml" value="0.18385416666666668" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
