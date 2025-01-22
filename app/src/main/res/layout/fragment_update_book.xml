@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:padding="16dp"
+    android:background="@color/white"
+    tools:context=".ui.fragments.UpdateBookFragment">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- Polja za uređivanje -->
+    <ImageView
+        android:id="@+id/updateImageView"
+        android:layout_width="164dp"
+        android:layout_height="109dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Naziv:"
+        android:textColor= "#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp" />
+    <EditText
+        android:id="@+id/etUpdateBookTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Unesite naziv knjige"
+        android:textColor= "#000000"
+        android:textSize="16sp"
+        android:background="@drawable/edittext_background"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Autor -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Autor:"
+        android:textColor= "#000000"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp" />
+    <EditText
+        android:id="@+id/etUpdateBookAuthor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Unesite ime autora"
+        android:textColor= "#000000"
+        android:textSize="16sp"
+        android:background="@drawable/edittext_background"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Žanr -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Žanr:"
+        android:textColor= "#000000"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp" />
+    <EditText
+        android:id="@+id/etUpdateBookGenre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Unesite žanr knjige"
+        android:textColor= "#000000"
+        android:textSize="16sp"
+        android:background="@drawable/edittext_background"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Nakladnik -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nakladnik:"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp" />
+    <EditText
+        android:id="@+id/etUpdateBookPublisher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Unesite ime nakladnika"
+        android:textColor= "#000000"
+        android:textSize="16sp"
+        android:background="@drawable/edittext_background"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Lokacija -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lokacija:"
+        android:textColor= "#000000"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp" />
+    <EditText
+        android:id="@+id/etUpdateBookLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Unesite lokaciju"
+        android:textColor= "#000000"
+        android:textSize="16sp"
+        android:background="@drawable/edittext_background"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Dostupno -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dostupno:"
+        android:textColor= "#000000"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp" />
+
+    <Switch
+        android:id="@+id/updateSwitch1"
+        android:layout_width="117dp"
+        android:layout_height="wrap_content"
+        android:text="Ne/Da"
+        android:textColor="#000000"
+        android:thumbTint="@color/darkBlue"
+        android:trackTint="@color/lightBlue" />
+
+    <!-- Godina izdanja -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Godina izdanja:"
+        android:textColor= "#000000"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp" />
+    <EditText
+        android:id="@+id/etUpdateBookYear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Unesite godinu izdanja"
+        android:textColor= "#000000"
+        android:textSize="16sp"
+        android:inputType="number"
+        android:background="@drawable/edittext_background"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Jezik izdanja -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jezik izdanja:"
+        android:textColor= "#000000"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp" />
+    <EditText
+        android:id="@+id/etUpdateBookLanguage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Unesite jezik izdanja"
+        android:textColor= "#000000"
+        android:textSize="16sp"
+        android:background="@drawable/edittext_background"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Broj stranica -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Broj stranica:"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp" />
+    <EditText
+        android:id="@+id/etUpdateBookPages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Unesite broj stranica"
+        android:textColor= "#000000"
+        android:textSize="16sp"
+        android:inputType="number"
+        android:background="@drawable/edittext_background"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Uvez -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Uvez:"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp" />
+    <EditText
+        android:id="@+id/etUpdateBookBinding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Unesite vrstu uveza"
+        android:textColor= "#000000"
+        android:textSize="16sp"
+        android:background="@drawable/edittext_background"
+        android:layout_marginBottom="8dp" />
+
+
+    <!-- Opis -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Opis:"
+        android:textColor= "#000000"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp" />
+    <EditText
+        android:id="@+id/etUpdateBookDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Unesite opis knjige"
+        android:textColor= "#000000"
+        android:textSize="16sp"
+        android:background="@drawable/edittext_background"
+        android:layout_marginBottom="16dp"
+        android:minHeight="100dp"
+        android:gravity="top"
+        android:inputType="textMultiLine" />
+
+    <!-- Gumbi -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <Button
+        android:id="@+id/btnSaveChanges"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Spremi promjene" />
+
+    <Button
+        android:id="@+id/btnCancelUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Odustani" />
+
+    </LinearLayout>
+</LinearLayout>
+</ScrollView>

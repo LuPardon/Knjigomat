@@ -56,6 +56,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
 
             // Slanje podataka o knjizi u novu aktivnost
             intent.putExtra("vlasnikID", book.getVlasnikID());
+            intent.putExtra("knjigaID", book.getKnjigaID());
             intent.putExtra("autor", book.getAutor());
             intent.putExtra("brojStranica", book.getBrojStranica());
             intent.putExtra("dostupno", book.getDostupno());
