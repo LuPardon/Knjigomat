@@ -48,6 +48,7 @@ public class PocetnaActivity extends AppCompatActivity {
             for (DocumentSnapshot document : queryDocumentSnapshots) {
                 Book book = document.toObject(Book.class);
                 if (book != null) {
+                    book.setKnjigaID(document.getId());
                     bookList.add(book);
                     originalBookList.add(book); // Spremanje originalne liste za filtriranje
                 }

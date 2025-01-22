@@ -1,7 +1,7 @@
 package com.example.knjigomat.books;
 
 public class Book {
-        private String naslov, autor, opis, jezikIzdanja, lokacija, nakladnik, slika, uvez, zanr, vlasnikID;
+        private String naslov, autor, opis, jezikIzdanja, lokacija, nakladnik, slika, uvez, zanr, vlasnikID, knjigaID;
         private int brojStranica,godinaIzdanja;
         private boolean dostupno;
 
@@ -24,6 +24,8 @@ public class Book {
         }
 
         public String getNaslov() { return naslov; }
+        public void setKnjigaID(String ID) { knjigaID = ID; }
+        public String getKnjigaID() { return knjigaID; }
         public String getAutor() { return autor; }
         public String getOpis() { return opis;}
         public int getBrojStranica() { return brojStranica;}

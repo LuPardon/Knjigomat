@@ -13,11 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:queryHint="Pretraži knjige"
         android:background="@color/light_purple"
-        app:layout_constraintTop_toTopOf="parent"
+        android:queryHint="Pretraži knjige"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- RecyclerView za prikaz knjiga -->
     <androidx.recyclerview.widget.RecyclerView
