@@ -1,7 +1,7 @@
 package com.example.knjigomat.books;
 
 import android.content.Context;
-import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +13,8 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.knjigomat.R;
-import com.example.knjigomat.ui.activities.BookActivity;
+import com.example.knjigomat.ui.activities.MainActivity;
+import com.example.knjigomat.ui.fragments.ReadBookFragment;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -41,7 +42,8 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
         // Postavljanje podataka u ViewHolder
         holder.bookTitle.setText(book.getNaslov());
         holder.bookAuthor.setText("Autor: " + book.getAutor());
-        Picasso.get().load(book.getSlika()).into(holder.bookImage); // Koristite Glide ili Picasso za slike
+        String slikica = book.getSlika() != null ? book.getSlika() : "https://media.istockphoto.com/id/183890264/photo/upright-red-book-with-clipping-path.jpg?s=612x612&w=0&k=20&c=zm6sEPnc4zK4MNj307pm3tzgxTbex2sOnb1Ip5hglaA=";
+        Picasso.get().load(slikica).into(holder.bookImage); // Koristite Glide ili Picasso za slike
 
         // Klik na "Posudi" gumb
         holder.btnContact.setOnClickListener(v -> {
@@ -52,26 +54,14 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
         // Klik na cijeli element (otvaranje detalja knjige)
         holder.itemView.setOnClickListener(v -> {
             Log.d("click", "Kliknuto");
-            Intent intent = new Intent(context, BookActivity.class);
 
-            // Slanje podataka o knjizi u novu aktivnost
-            intent.putExtra("vlasnikID", book.getVlasnikID());
-            intent.putExtra("knjigaID", book.getKnjigaID());
-            intent.putExtra("autor", book.getAutor());
-            intent.putExtra("brojStranica", book.getBrojStranica());
-            intent.putExtra("dostupno", book.getDostupno());
-            intent.putExtra("godinaIzdanja", book.getGodinaIzdanja());
-            intent.putExtra("jezikIzdanja", book.getJezikIzdanja());
-            intent.putExtra("lokacija", book.getLokacija());
-            intent.putExtra("nakladnik", book.getNakladnik());
-            intent.putExtra("naslov", book.getNaslov());
-            intent.putExtra("opis", book.getOpis());
-            intent.putExtra("slika", book.getSlika());
-            intent.putExtra("uvez", book.getUvez());
-            intent.putExtra("zanr", book.getZanr());
-
-
-            context.startActivity(intent);
+            Bundle b = new Bundle();
+            b.putString("knjigaID", book.getKnjigaID());
+            b.putString("vlasnikID", book.getVlasnikID());
+            ((MainActivity) context).getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.main_fragment_container, ReadBookFragment.class, b)
+//                .addToBackStack(null)
+                    .commit();
         });
     }
 

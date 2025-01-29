@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.fragments.MyBooksFragment">
+
+    <!-- Search View za pretraživanje knjiga -->
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchViewMyBooks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@color/light_purple"
+        android:queryHint="Pretraži knjige" />
+
+    <!-- Gumb za dodavanje nove knjige -->
+    <Button
+        android:id="@+id/btnAddNewBook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="7dp"
+        android:text="Dodaj novu knjigu" />
+
+    <!-- RecyclerView za prikaz knjiga -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewMyBooks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        tools:listitem="@layout/item_book" />
+
+</LinearLayout>

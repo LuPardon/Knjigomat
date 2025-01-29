@@ -1,6 +1,7 @@
 package com.example.knjigomat.ui.fragments;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,10 +23,11 @@ import com.squareup.picasso.Picasso;
 
 public class ReadBookFragment extends Fragment {
 
-    private EditText etBookTitle, etBookAuthor, etBookGenre,etBookLocation,etBookYear,etBookLanguage, etBookDescription,etBookBinding,etBookPublisher,etBookPages;
+    private EditText etBookTitle, etBookAuthor, etBookGenre, etBookLocation, etBookYear, etBookLanguage, etBookDescription, etBookBinding, etBookPublisher, etBookPages;
     private Switch switch1;
     private ImageView imageView;
     private Button btnKontaktBook, btnUpdateBook, btnDeleteBook;
+    private String knjigaID, slika;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,8 +36,8 @@ public class ReadBookFragment extends Fragment {
 
         Bundle b = this.getArguments();
         // Dohvaćanje Bundle-a iz Intenta
-        if(b == null) {
-            Toast.makeText(getContext(), "Podaci neispravno poslani",Toast.LENGTH_LONG).show();
+        if (b == null) {
+            Toast.makeText(getContext(), "Podaci neispravno poslani", Toast.LENGTH_LONG).show();
             return view;
         }
 
@@ -60,20 +62,7 @@ public class ReadBookFragment extends Fragment {
         btnDeleteBook = view.findViewById(R.id.btnDeleteBook);
 
         //Dohvaćanje i prikaz ažurirane knjige
-        String knjigaID = b.getString("knjigaID", "");
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        db.collection("knjige").document(knjigaID).get()
-                .addOnSuccessListener(snapshot -> {
-                    if (snapshot.exists()) {
-                        populateFields(snapshot);
-                    } else {
-                        Toast.makeText(getContext(), "Knjiga nije pronađena.", Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .addOnFailureListener(e -> {
-                    Toast.makeText(getContext(), "Greška prilikom dohvaćanja podataka.", Toast.LENGTH_SHORT).show();
-                });
-
+        knjigaID = b.getString("knjigaID", "");
 
         // Provjera korisnika
             String vlasnikID = b.getString("vlasnikID", "");
@@ -85,8 +74,21 @@ public class ReadBookFragment extends Fragment {
 
                 btnUpdateBook.setOnClickListener(v -> {
 //                    Toast.makeText(getContext(), "Ažurirana knjiga.",Toast.LENGTH_LONG).show();
+
+                    b.putString("autor", etBookAuthor.getText().toString());
+                    b.putInt("brojStranica", Integer.parseInt(etBookPages.getText().toString()));
+                    b.putBoolean("dostupno", switch1.isChecked());
+                    b.putInt("godinaIzdanja", Integer.parseInt(etBookYear.getText().toString()));
+                    b.putString("jezikIzdanja", etBookLanguage.getText().toString());
+                    b.putString("lokacija", etBookLocation.getText().toString());
+                    b.putString("nakladnik", etBookPublisher.getText().toString());
+                    b.putString("naslov", etBookTitle.getText().toString());
+                    b.putString("opis", etBookDescription.getText().toString());
+                    b.putString("zanr", etBookGenre.getText().toString());
+                    b.putString("uvez", etBookBinding.getText().toString());
+                    b.putString("slika", (!TextUtils.isEmpty(slika)) ? slika : "https://media.istockphoto.com/id/183890264/photo/upright-red-book-with-clipping-path.jpg?s=612x612&w=0&k=20&c=zm6sEPnc4zK4MNj307pm3tzgxTbex2sOnb1Ip5hglaA=");
                     getActivity().getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.fragment_container, UpdateBookFragment.class, b)
+                            .replace(R.id.main_fragment_container, UpdateBookFragment.class, b)
                             .addToBackStack("read")
                             .commit();
                 });
@@ -118,7 +120,7 @@ public class ReadBookFragment extends Fragment {
         String uvez = snapshot.getString("uvez");
         String nakladnik = snapshot.getString("nakladnik");
         Boolean dostupno = snapshot.getBoolean("dostupno");
-        String slika = snapshot.getString("slika");
+        slika = snapshot.getString("slika");
 
         if (naslov != null) etBookTitle.setText(naslov);
         if (autor != null) etBookAuthor.setText(autor);
@@ -132,6 +134,28 @@ public class ReadBookFragment extends Fragment {
         if (nakladnik != null) etBookPublisher.setText(nakladnik);
         if (dostupno != null)
             switch1.setChecked(dostupno);
-        if (slika != null) Picasso.get().load(slika).into(imageView);
+        if (slika != null && !slika.isEmpty()) {
+            Picasso.get().load(slika).into(imageView);
+        } else {
+            Picasso.get().load("https://media.istockphoto.com/id/183890264/photo/upright-red-book-with-clipping-path.jpg?s=612x612&w=0&k=20&c=zm6sEPnc4zK4MNj307pm3tzgxTbex2sOnb1Ip5hglaA=").into(imageView);
+        }
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("knjige").document(knjigaID).get()
+                .addOnSuccessListener(snapshot -> {
+                    if (snapshot.exists()) {
+                        populateFields(snapshot);
+                    } else {
+                        Toast.makeText(getContext(), "Knjiga nije pronađena.", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    Toast.makeText(getContext(), "Greška prilikom dohvaćanja podataka.", Toast.LENGTH_SHORT).show();
+                });
     }
 }

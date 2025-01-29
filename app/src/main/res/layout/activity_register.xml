@@ -26,4 +26,11 @@
         android:layout_height="wrap_content"
         android:text="Registriraj se"
         android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/btnLogin2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Prijavi se" />
 </LinearLayout>

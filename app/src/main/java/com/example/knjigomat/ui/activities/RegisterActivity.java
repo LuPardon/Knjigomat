@@ -24,6 +24,10 @@ public class RegisterActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         etRegisterEmail = findViewById(R.id.etRegisterEmail);
         etRegisterPassword = findViewById(R.id.etRegisterPassword);
+        findViewById(R.id.btnLogin2).setOnClickListener(v -> {
+            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+            finish();
+        });
 
         findViewById(R.id.btnRegister).setOnClickListener(new View.OnClickListener() {
             @Override
