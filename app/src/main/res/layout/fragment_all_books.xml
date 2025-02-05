@@ -6,6 +6,97 @@
     android:orientation="vertical"
     tools:context=".ui.fragments.AllBooksFragment">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="3dp">
+
+        <Spinner
+            android:id="@+id/zanr_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:drawable/btn_dropdown"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+
+        <Spinner
+            android:id="@+id/uvez_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:drawable/btn_dropdown"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+
+
+        <Spinner
+            android:id="@+id/lokacija_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:drawable/btn_dropdown"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+
+
+        <Spinner
+            android:id="@+id/brojStranica_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:drawable/btn_dropdown"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="3dp">
+
+        <Spinner
+            android:id="@+id/nakladnik_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:drawable/btn_dropdown"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+
+        <Spinner
+            android:id="@+id/dostupno_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:drawable/btn_dropdown"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+
+        <Spinner
+            android:id="@+id/godinaIzdanja_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:drawable/btn_dropdown"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+
+        <Spinner
+            android:id="@+id/jezikIzdanja_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:drawable/btn_dropdown"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+
+    </LinearLayout>
+
     <!-- Search View za pretraživanje knjiga -->
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchView"
@@ -13,7 +104,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:background="@color/light_purple"
-        android:queryHint="Pretraži knjige" />
+        android:queryHint="@string/pretrazi_knjige" />
 
     <!-- RecyclerView za prikaz knjiga -->
     <androidx.recyclerview.widget.RecyclerView

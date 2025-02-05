@@ -20,26 +20,26 @@
         android:background="@drawable/card_background">
 
         <!-- Naslov knjige -->
-
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="164dp"
+            android:layout_width="match_parent"
             android:layout_height="109dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Naziv:"
-            android:textColor= "#000000"
+            android:text="@string/naziv"
+            android:textColor="#000000"
             android:textSize="16sp"
             android:textStyle="bold"
             android:layout_marginBottom="4dp" />
+
         <EditText
             android:id="@+id/etBookTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Unesite naziv knjige"
-            android:textColor= "#000000"
+            android:hint="@string/unesite_naziv_knjige"
+            android:textColor="#000000"
             android:textSize="16sp"
             android:enabled="false"
             android:background="@drawable/edittext_background"
@@ -49,16 +49,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Autor:"
-            android:textColor= "#000000"
+            android:text="@string/autor"
+            android:textColor="#000000"
             android:textSize="16sp"
             android:layout_marginBottom="4dp" />
+
         <EditText
             android:id="@+id/etBookAuthor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Unesite ime autora"
-            android:textColor= "#000000"
+            android:hint="@string/unesite_ime_autora"
+            android:textColor="#000000"
             android:textSize="16sp"
             android:enabled="false"
             android:background="@drawable/edittext_background"
@@ -68,16 +69,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Žanr:"
-            android:textColor= "#000000"
+            android:text="@string/zanr"
+            android:textColor="#000000"
             android:textSize="16sp"
             android:layout_marginBottom="4dp" />
+
         <EditText
             android:id="@+id/etBookGenre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Unesite žanr knjige"
-            android:textColor= "#000000"
+            android:hint="@string/unesite_zanr_knjige"
+            android:textColor="#000000"
             android:enabled="false"
             android:textSize="16sp"
             android:background="@drawable/edittext_background"
@@ -87,16 +89,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nakladnik:"
+            android:text="@string/nakladnik"
             android:textColor="#000000"
             android:textSize="16sp"
             android:layout_marginBottom="4dp" />
+
         <EditText
             android:id="@+id/etBookPublisher"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Unesite ime nakladnika"
-            android:textColor= "#000000"
+            android:hint="@string/unesite_ime_nakladnika"
+            android:textColor="#000000"
             android:enabled="false"
             android:textSize="16sp"
             android:background="@drawable/edittext_background"
@@ -106,16 +109,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lokacija:"
-            android:textColor= "#000000"
+            android:text="@string/lokacija"
+            android:textColor="#000000"
             android:textSize="16sp"
             android:layout_marginBottom="4dp" />
+
         <EditText
             android:id="@+id/etBookLocation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Unesite lokaciju"
-            android:textColor= "#000000"
+            android:hint="@string/unesite_lokaciju"
+            android:textColor="#000000"
             android:enabled="false"
             android:textSize="16sp"
             android:background="@drawable/edittext_background"
@@ -125,8 +129,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dostupno:"
-            android:textColor= "#000000"
+            android:text="@string/dostupno"
+            android:textColor="#000000"
             android:textSize="16sp"
             android:layout_marginBottom="4dp" />
 
@@ -134,7 +138,7 @@
             android:id="@+id/switch1"
             android:layout_width="117dp"
             android:layout_height="wrap_content"
-            android:text="Ne/Da"
+            android:text="@string/ne_da"
             android:enabled="false"
             android:textColor="#000000"
             android:thumbTint="@color/darkBlue"
@@ -144,16 +148,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Godina izdanja:"
-            android:textColor= "#000000"
+            android:text="@string/godina_izdanja"
+            android:textColor="#000000"
             android:textSize="16sp"
             android:layout_marginBottom="4dp" />
+
         <EditText
             android:id="@+id/etBookYear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Unesite godinu izdanja"
-            android:textColor= "#000000"
+            android:hint="@string/unesite_godinu_izdanja"
+            android:textColor="#000000"
             android:enabled="false"
             android:textSize="16sp"
             android:inputType="number"
@@ -164,16 +169,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Jezik izdanja:"
-            android:textColor= "#000000"
+            android:text="@string/jezik_izdanja"
+            android:textColor="#000000"
             android:textSize="16sp"
             android:layout_marginBottom="4dp" />
+
         <EditText
             android:id="@+id/etBookLanguage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Unesite jezik izdanja"
-            android:textColor= "#000000"
+            android:hint="@string/unesite_jezik_izdanja"
+            android:textColor="#000000"
             android:enabled="false"
             android:textSize="16sp"
             android:background="@drawable/edittext_background"
@@ -183,16 +189,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Broj stranica:"
+            android:text="@string/broj_stranica"
             android:textColor="#000000"
             android:textSize="16sp"
             android:layout_marginBottom="4dp" />
+
         <EditText
             android:id="@+id/etBookPages"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Unesite broj stranica"
-            android:textColor= "#000000"
+            android:hint="@string/unesite_broj_stranica"
+            android:textColor="#000000"
             android:enabled="false"
             android:textSize="16sp"
             android:inputType="number"
@@ -203,16 +210,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Uvez:"
+            android:text="@string/uvez"
             android:textColor="#000000"
             android:textSize="16sp"
             android:layout_marginBottom="4dp" />
+
         <EditText
             android:id="@+id/etBookBinding"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Unesite vrstu uveza"
-            android:textColor= "#000000"
+            android:hint="@string/unesite_vrstu_uveza"
+            android:textColor="#000000"
             android:enabled="false"
             android:textSize="16sp"
             android:background="@drawable/edittext_background"
@@ -223,15 +231,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Opis:"
-            android:textColor= "#000000"
+            android:text="@string/opis"
+            android:textColor="#000000"
             android:textSize="16sp"
             android:layout_marginBottom="4dp" />
         <EditText
             android:id="@+id/etBookDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Unesite opis knjige"
+            android:hint="@string/unesite_opis_knjige"
             android:enabled="false"
             android:textColor= "#000000"
             android:textSize="16sp"
@@ -248,7 +256,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:backgroundTint="@color/blue"
-            android:text="Kontaktiraj"
+            android:text="@string/kontaktiraj"
             android:textColor="@color/white"
             android:textSize="16sp" />
 
@@ -260,7 +268,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:backgroundTint="@color/blue"
-            android:text="Ažuriraj"
+            android:text="@string/azuriraj"
             android:textColor="@color/white"
             android:textSize="16sp"
             android:visibility="gone" />
@@ -272,7 +280,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:backgroundTint="@color/red"
-            android:text="Obriši"
+            android:text="@string/obrisi"
             android:textColor="@color/white"
             android:textSize="16sp"
             android:visibility="gone" />

@@ -1,4 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">Knjigomat</string>
     <string name="email">Email</string>
     <string name="lozinka">Lozinka</string>
@@ -23,9 +25,9 @@
 
     <string name="dostupno">Dostupno:</string>
     <string name="ne_da">Ne/Da</string>
+
     <string name="da">Da</string>
     <string name="ne">Ne</string>
-
 
     <string name="godina_izdanja">Godina izdanja:</string>
     <string name="unesite_godinu_izdanja">Unesite godinu izdanja</string>
@@ -59,6 +61,4 @@
     <string name="spremi_promjene">Spremi promjene</string>
 
     <string name="odustani_update">Odustani</string>
-
-
 </resources>

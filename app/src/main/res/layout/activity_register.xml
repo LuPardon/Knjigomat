@@ -9,14 +9,14 @@
         android:id="@+id/etRegisterEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
+        android:hint="@string/email"
         android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/etRegisterPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Lozinka"
+        android:hint="@string/lozinka"
         android:inputType="textPassword"
         android:layout_marginTop="8dp" />
 
@@ -24,7 +24,7 @@
         android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Registriraj se"
+        android:text="@string/registriraj_se"
         android:layout_marginTop="16dp" />
 
     <Button
@@ -32,5 +32,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Prijavi se" />
+        android:text="@string/prijavi_se" />
 </LinearLayout>

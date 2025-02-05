@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bookomat</string>
+    <string name="email">Email</string>
+    <string name="lozinka">Password</string>
+    <string name="prijavi_se">Log in</string>
+    <string name="registriraj_se">Sign up</string>
+
+    <string name="naziv">Title:</string>
+    <string name="unesite_naziv_knjige">Enter book title</string>
+
+    <string name="autor">Author:</string>
+    <string name="unesite_ime_autora">Enter authors name</string>
+
+    <string name="zanr">Genre:</string>
+    <string name="unesite_zanr_knjige">Enter book genre</string>
+
+    <string name="nakladnik">Publisher:</string>
+    <string name="unesite_ime_nakladnika">Enter publishers name</string>
+
+    <string name="lokacija">Location:</string>
+    <string name="unesite_lokaciju">Enter location</string>
+
+    <string name="dostupno">Available:</string>
+    <string name="ne_da">No/Yes</string>
+
+    <string name="da">Yes</string>
+    <string name="ne">No</string>
+
+    <string name="godina_izdanja">Year of publication:</string>
+    <string name="unesite_godinu_izdanja">Enter year of publication</string>
+
+    <string name="jezik_izdanja">Language of edition:</string>
+    <string name="unesite_jezik_izdanja">Enter language of edition</string>
+
+    <string name="broj_stranica">Number of pages:</string>
+    <string name="unesite_broj_stranica">Enter number of pages</string>
+
+    <string name="uvez">Binding:</string>
+    <string name="unesite_vrstu_uveza">Enter type of binding</string>
+
+    <string name="opis">Description:</string>
+    <string name="unesite_opis_knjige">Enter book description</string>
+
+    <string name="dodaj_knjigu">Add book</string>
+
+    <string name="odustani_add">Cancel</string>
+
+    <string name="pretrazi_knjige">Search books</string>
+
+    <string name="dodaj_novu_knjigu">Add new book</string>
+
+    <string name="kontaktiraj">Contact</string>
+
+    <string name="azuriraj">Update</string>
+
+    <string name="obrisi">Delete</string>
+
+    <string name="spremi_promjene">Save changes</string>
+
+    <string name="odustani_update">Cancel</string>
+</resources>

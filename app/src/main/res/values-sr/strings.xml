@@ -1,10 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Knjigomat</string>
     <string name="email">Email</string>
     <string name="lozinka">Lozinka</string>
     <string name="prijavi_se">Prijavi se</string>
-    <string name="registriraj_se">Registriraj se</string>
-
+    <string name="registriraj_se">Registruj se</string>
 
     <string name="naziv">Naziv:</string>
     <string name="unesite_naziv_knjige">Unesite naziv knjige</string>
@@ -15,17 +15,17 @@
     <string name="zanr">Žanr:</string>
     <string name="unesite_zanr_knjige">Unesite žanr knjige</string>
 
-    <string name="nakladnik">Nakladnik:</string>
-    <string name="unesite_ime_nakladnika">Unesite ime nakladnika</string>
+    <string name="nakladnik">Izdavač:</string>
+    <string name="unesite_ime_nakladnika">Unesite ime izdavača</string>
 
     <string name="lokacija">Lokacija:</string>
     <string name="unesite_lokaciju">Unesite lokaciju</string>
 
     <string name="dostupno">Dostupno:</string>
     <string name="ne_da">Ne/Da</string>
+
     <string name="da">Da</string>
     <string name="ne">Ne</string>
-
 
     <string name="godina_izdanja">Godina izdanja:</string>
     <string name="unesite_godinu_izdanja">Unesite godinu izdanja</string>
@@ -36,8 +36,8 @@
     <string name="broj_stranica">Broj stranica:</string>
     <string name="unesite_broj_stranica">Unesite broj stranica</string>
 
-    <string name="uvez">Uvez:</string>
-    <string name="unesite_vrstu_uveza">Unesite vrstu uveza</string>
+    <string name="uvez">Povez:</string>
+    <string name="unesite_vrstu_uveza">Unesite vrstu poveza</string>
 
     <string name="opis">Opis:</string>
     <string name="unesite_opis_knjige">Unesite opis knjige</string>
@@ -56,9 +56,9 @@
 
     <string name="obrisi">Obriši</string>
 
-    <string name="spremi_promjene">Spremi promjene</string>
+    <string name="spremi_promjene">Sačuvaj promene</string>
 
     <string name="odustani_update">Odustani</string>
-
-
 </resources>
+
+

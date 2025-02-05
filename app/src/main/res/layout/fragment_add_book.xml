@@ -15,14 +15,15 @@
         <!-- Polja za uređivanje -->
         <ImageView
             android:id="@+id/AddImageView"
-            android:layout_width="164dp"
+            android:layout_width="match_parent"
+            android:background="@drawable/border"
             android:layout_height="109dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
-            android:text="Naziv:"
+            android:text="@string/naziv"
             android:textColor="#000000"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -33,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_background"
-            android:hint="Unesite naziv knjige"
+            android:hint="@string/unesite_naziv_knjige"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -42,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
-            android:text="Autor:"
+            android:text="@string/autor"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -52,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_background"
-            android:hint="Unesite ime autora"
+            android:hint="@string/unesite_ime_autora"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -61,7 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
-            android:text="Žanr:"
+            android:text="@string/zanr"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -71,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_background"
-            android:hint="Unesite žanr knjige"
+            android:hint="@string/unesite_zanr_knjige"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -80,7 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
-            android:text="Nakladnik:"
+            android:text="@string/nakladnik"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -90,7 +91,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_background"
-            android:hint="Unesite ime nakladnika"
+            android:hint="@string/unesite_ime_nakladnika"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -99,7 +100,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
-            android:text="Lokacija:"
+            android:text="@string/lokacija"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -109,7 +110,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_background"
-            android:hint="Unesite lokaciju"
+            android:hint="@string/unesite_lokaciju"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -118,7 +119,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
-            android:text="Dostupno:"
+            android:text="@string/dostupno"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -126,7 +127,7 @@
             android:id="@+id/AddSwitch1"
             android:layout_width="117dp"
             android:layout_height="wrap_content"
-            android:text="Ne/Da"
+            android:text="@string/ne_da"
             android:textColor="#000000"
             android:thumbTint="@color/darkBlue"
             android:trackTint="@color/lightBlue" />
@@ -136,7 +137,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
-            android:text="Godina izdanja:"
+            android:text="@string/godina_izdanja"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -146,7 +147,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_background"
-            android:hint="Unesite godinu izdanja"
+            android:hint="@string/unesite_godinu_izdanja"
             android:inputType="number"
             android:textColor="#000000"
             android:textSize="16sp" />
@@ -156,7 +157,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
-            android:text="Jezik izdanja:"
+            android:text="@string/jezik_izdanja"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -166,7 +167,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_background"
-            android:hint="Unesite jezik izdanja"
+            android:hint="@string/unesite_jezik_izdanja"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -175,7 +176,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
-            android:text="Broj stranica:"
+            android:text="@string/broj_stranica"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -185,7 +186,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_background"
-            android:hint="Unesite broj stranica"
+            android:hint="@string/unesite_broj_stranica"
             android:inputType="number"
             android:textColor="#000000"
             android:textSize="16sp" />
@@ -195,7 +196,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
-            android:text="Uvez:"
+            android:text="@string/uvez"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -205,7 +206,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_background"
-            android:hint="Unesite vrstu uveza"
+            android:hint="@string/unesite_vrstu_uveza"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -215,7 +216,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
-            android:text="Opis:"
+            android:text="@string/opis"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -226,7 +227,7 @@
             android:layout_marginBottom="16dp"
             android:background="@drawable/edittext_background"
             android:gravity="top"
-            android:hint="Unesite opis knjige"
+            android:hint="@string/unesite_opis_knjige"
             android:inputType="textMultiLine"
             android:minHeight="100dp"
             android:textColor="#000000"
@@ -240,15 +241,22 @@
 
             <Button
                 android:id="@+id/btnAddBook"
-                android:layout_width="wrap_content"
+                android:layout_width="157dp"
                 android:layout_height="wrap_content"
-                android:text="Dodaj knjigu" />
+                android:layout_gravity="start"
+                android:text="@string/dodaj_knjigu" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
 
             <Button
                 android:id="@+id/btnCancelAdd"
-                android:layout_width="wrap_content"
+                android:layout_width="130dp"
                 android:layout_height="wrap_content"
-                android:text="Odustani" />
+                android:layout_gravity="end"
+                android:text="@string/odustani_add" />
 
         </LinearLayout>
     </LinearLayout>

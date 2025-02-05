@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:background="@color/light_purple"
-        android:queryHint="Pretraži knjige" />
+        android:queryHint="pretrazi_knjige" />
 
     <!-- Gumb za dodavanje nove knjige -->
     <Button
@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="7dp"
-        android:text="Dodaj novu knjigu" />
+        android:text="@string/dodaj_novu_knjigu" />
 
     <!-- RecyclerView za prikaz knjiga -->
     <androidx.recyclerview.widget.RecyclerView

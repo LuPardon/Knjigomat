@@ -6,16 +6,19 @@
         <entry key="..\:/Users/Lucija/AndroidStudioProjects/KnjigomatApp/app/src/main/res/drawable/border.xml" value="0.227" />
         <entry key="..\:/Users/Lucija/AndroidStudioProjects/KnjigomatApp/app/src/main/res/font/actor.xml" value="0.284375" />
         <entry key="..\:/Users/Lucija/AndroidStudioProjects/KnjigomatApp/app/src/main/res/layout/activity_book.xml" value="0.1" />
+        <entry key="..\:/Users/Lucija/AndroidStudioProjects/KnjigomatApp/app/src/main/res/layout/activity_camera.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Lucija/AndroidStudioProjects/KnjigomatApp/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Lucija/AndroidStudioProjects/KnjigomatApp/app/src/main/res/layout/activity_main.xml" value="0.15833333333333333" />
+        <entry key="..\:/Users/Lucija/AndroidStudioProjects/KnjigomatApp/app/src/main/res/layout/activity_main2.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Lucija/AndroidStudioProjects/KnjigomatApp/app/src/main/res/layout/activity_pocetna.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Lucija/AndroidStudioProjects/KnjigomatApp/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Lucija/AndroidStudioProjects/KnjigomatApp/app/src/main/res/layout/fragment_add_book.xml" value="0.1" />
+        <entry key="..\:/Users/Lucija/AndroidStudioProjects/KnjigomatApp/app/src/main/res/layout/fragment_add_book.xml" value="0.264" />
         <entry key="..\:/Users/Lucija/AndroidStudioProjects/KnjigomatApp/app/src/main/res/layout/fragment_all_books.xml" value="0.25825471698113206" />
         <entry key="..\:/Users/Lucija/AndroidStudioProjects/KnjigomatApp/app/src/main/res/layout/fragment_my_books.xml" value="0.27804107424960506" />
         <entry key="..\:/Users/Lucija/AndroidStudioProjects/KnjigomatApp/app/src/main/res/layout/fragment_read_book.xml" value="0.1" />
         <entry key="..\:/Users/Lucija/AndroidStudioProjects/KnjigomatApp/app/src/main/res/layout/fragment_update_book.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Lucija/AndroidStudioProjects/KnjigomatApp/app/src/main/res/layout/item_book.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Lucija/AndroidStudioProjects/KnjigomatApp/app/src/main/res/menu/language_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Lucija/AndroidStudioProjects/KnjigomatApp/app/src/main/res/menu/main_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.199" />
         <entry key="..\:/Users/Lucija/Downloads/BuzzKeeper/app/src/main/res/drawable-v24/switch_thumb_selector.xml" value="0.2275" />
