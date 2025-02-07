@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.knjigomat.R;
+import com.example.knjigomat.chat.fragment_screen4;
 import com.example.knjigomat.ui.fragments.AllBooksFragment;
 import com.example.knjigomat.ui.fragments.MyBooksFragment;
 import com.google.firebase.auth.FirebaseAuth;
@@ -53,6 +54,14 @@ public class MainActivity extends AppCompatActivity {
                     .replace(R.id.main_fragment_container, AllBooksFragment.class, null)
 //                .addToBackStack(null)
                     .commit();
+
+        } else if (id == R.id.chat) {
+            // Zamjena trenutnog fragmenta
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.main_fragment_container, fragment_screen4.class, null)
+//                .addToBackStack(null)
+                    .commit();
+
         } else if (id == R.id.odjava) {
             FirebaseAuth.getInstance().signOut();
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
