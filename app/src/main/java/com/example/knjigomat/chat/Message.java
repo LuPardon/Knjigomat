@@ -2,17 +2,43 @@ package com.example.knjigomat.chat;
 
 public class Message {
 
-    private String tekst, key, senderId;
+    private String tekst;
+    private String key;
+    private String senderId;
+    private boolean isImage;
+    private String chatId;
     private long timestamp;  // Dodan timestamp za sortiranje poruka po vremenu
+
+    //    public Message(String tekst, long timestamp, String senderId) {
+//        this.tekst = tekst;
+//        this.senderId = senderId;
+//        this.timestamp = timestamp;
+//    }
+    public Message(String tekst, long timestamp, String senderId, boolean isImage) {
+        this.tekst = tekst;
+        this.senderId = senderId;
+        this.timestamp = timestamp;
+        this.isImage = isImage;
+    }
 
     public Message() {
         // Prazan konstruktor potreban za Firebase
     }
 
-    public Message(String tekst, long timestamp, String senderId) {
-        this.tekst = tekst;
-        this.senderId = senderId;
-        this.timestamp = timestamp;
+    public String getChatId() {
+        return chatId;
+    }
+
+    public void setChatId(String chatId) {
+        this.chatId = chatId;
+    }
+
+    public boolean isImage() {
+        return isImage;
+    }
+
+    public void setImage(boolean image) {
+        isImage = image;
     }
 
     // Getter i setter metode za sve atribute

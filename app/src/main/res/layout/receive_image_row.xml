@@ -7,8 +7,10 @@
         android:id="@+id/rl_receive_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="65dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="10dp"
+
         android:background="@drawable/receive_image_bg">
 
         <ImageView
@@ -22,40 +24,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/image"
+            android:layout_alignParentStart="true"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:text="now"
+            android:layout_marginBottom="10dp"
             android:textColor="#AFAFAF"
             android:textSize="12sp" />
 
-        <TextView
-            android:id="@+id/round_circle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/image"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="10dp"
-            android:layout_toEndOf="@+id/time"
-            android:text="●"
-            android:textColor="#AFAFAF"
-            android:textSize="12sp" />
-
-        <TextView
-            android:id="@+id/location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/image"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="10dp"
-            android:layout_toEndOf="@+id/round_circle"
-            android:text="San Francisco"
-            android:textColor="#AFAFAF"
-            android:textSize="12sp" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:layout_below="@id/time" />
     </RelativeLayout>
 
     <ImageView

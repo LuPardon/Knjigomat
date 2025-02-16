@@ -14,13 +14,36 @@
         <item name="floatingActionButtonLargeSecondaryStyle">@style/floatingActionButtonStyle</item>
         <!-- Customize your theme here. -->
     </style>
+
     <style name="floatingActionButtonStyle" parent="Widget.Design.FloatingActionButton">
         <item name="shapeAppearanceOverlay">@style/FabShapeStyle1</item>
     </style>
+
     <style name="FabShapeStyle1" parent="ShapeAppearance.MaterialComponents.SmallComponent">
         <item name="cornerSize">30%</item>
         <item name="cornerFamily">cut</item>
         <item name="android:backgroundTint">#dfaf36</item>
         <item name="android:tint">@android:color/white</item>
+    </style>
+
+    <style name="Theme.Knjigomat.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Knjigomat.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Knjigomat.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Theme.Knjigomat.Fullscreen" parent="Theme.Knjigomat">
+        <item name="android:actionBarStyle">@style/Widget.Theme.Knjigomat.ActionBar.Fullscreen
+        </item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+    </style>
+
+    <style name="ThemeOverlay.Knjigomat.FullscreenContainer" parent="">
+        <item name="fullscreenBackgroundColor">@color/light_blue_600</item>
+        <item name="fullscreenTextColor">@color/light_blue_A200</item>
     </style>
 </resources>

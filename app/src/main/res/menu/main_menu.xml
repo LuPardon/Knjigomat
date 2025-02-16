@@ -6,17 +6,17 @@
     <item
         android:id="@+id/sve_knjige"
         android:orderInCategory="1"
-        android:title="Sve knjige" />
+        android:title="@string/sve_knjige" />
     <item
         android:id="@+id/moje_knjige"
         android:orderInCategory="2"
-        android:title="Moje knjige" />
+        android:title="@string/moje_knjige" />
     <item
         android:id="@+id/chat"
         android:orderInCategory="3"
-        android:title="Razgovori" />
+        android:title="@string/razgovori" />
     <item
         android:id="@+id/odjava"
         android:orderInCategory="4"
-        android:title="Odjava" />
+        android:title="@string/odjava" />
 </menu>

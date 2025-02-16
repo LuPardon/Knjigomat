@@ -4,21 +4,22 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Base64;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.knjigomat.R;
-import com.example.knjigomat.chat.screen5;
+import com.example.knjigomat.chat.ConversationActivity;
 import com.example.knjigomat.ui.activities.MainActivity;
 import com.example.knjigomat.ui.fragments.ReadBookFragment;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.List;
 
@@ -57,33 +58,35 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
 
         // Klik na "Posudi" gumb
         holder.btnContact.setOnClickListener(v -> {
-            Intent intent = new Intent(context, screen5.class);
-            Bundle b = new Bundle();
-            b.putString("nameReceiver", book.getVlasnikID());
-            b.putString("receiverID", book.getVlasnikID());
-            intent.putExtras(b);
 
-            context.startActivity(intent);
-//            Log.d("BookAdapter", "Kliknuto na Kontaktiraj za knjigu: " + book.getNaslov());
+            // 🚨 PROVJERA: Spriječi korisnika da započne Chat sa sobom
+            if (book.getVlasnikID().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())) {
+                Toast.makeText(context, context.getResources().getString(R.string.sebi_poruka), Toast.LENGTH_SHORT).show();
+            } else {
+
+
+                Intent intent = new Intent(context, ConversationActivity.class);
+                Bundle b = new Bundle();
+                b.putString("nameReceiver", book.getVlasnikID());
+                b.putString("receiverID", book.getVlasnikID());
+                b.putString("naslov", book.getNaslov());
+                b.putString("slika_knjige", book.getSlika());
+                intent.putExtras(b);
+
+                context.startActivity(intent);
+            }
         });
 
-//        holder.btnContact.setOnClickListener(v -> {
-//            ((MainActivity) context).getSupportFragmentManager().beginTransaction()
-//                    .replace(R.id.main_fragment_container, fragment_screen6.class, null)
-//                    .commit();
-//            Log.d("BookAdapter", "Kliknuto na Kontaktiraj za knjigu: " + book.getNaslov());
-//        });
 
         // Klik na cijeli element (otvaranje detalja knjige)
         holder.itemView.setOnClickListener(v -> {
-            Log.d("click", "Kliknuto");
 
             Bundle b = new Bundle();
             b.putString("knjigaID", book.getKnjigaID());
             b.putString("vlasnikID", book.getVlasnikID());
             ((MainActivity) context).getSupportFragmentManager().beginTransaction()
                     .replace(R.id.main_fragment_container, ReadBookFragment.class, b)
-//                .addToBackStack(null)
+                    .addToBackStack(null)
                     .commit();
         });
     }

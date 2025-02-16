@@ -1,12 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Bookomat</string>
+    <string name="app_name">Knjigomat</string>
     <string name="email">Email</string>
     <string name="lozinka">Password</string>
-    <string name="prijavi_se">Log in</string>
+    <string name="lozinka2">Repeat password</string>
+    <string name="prijavi_se">Sign in</string>
+    <string name="ime">First name</string>
+    <string name="prezime">Last name</string>
     <string name="registriraj_se">Sign up</string>
 
     <string name="naziv">Title:</string>
+    <string name="upit_knjiga">Book request:</string>
     <string name="unesite_naziv_knjige">Enter book title</string>
 
     <string name="autor">Author:</string>
@@ -23,9 +26,47 @@
 
     <string name="dostupno">Available:</string>
     <string name="ne_da">No/Yes</string>
-
     <string name="da">Yes</string>
     <string name="ne">No</string>
+
+    <string name="sve_knjige">All books</string>
+    <string name="razgovori">Chats</string>
+    <string name="moje_knjige">My books</string>
+    <string name="odjava">Logout</string>
+
+    <string name="logout_app">Are you sure you want to log out of the app?</string>
+    <string name="logout_info">Logout!</string>
+
+    <string name="sebi_poruka">You cannot send a message to yourself...</string>
+    <string name="nepoznat_korisnik">Unknown user</string>
+    <string name="greska_dohvacanje">Error retrieving data!</string>
+    <string name="greska_ucitavanje">Error loading data!</string>
+    <string name="poslana_slika">Image sent...</string>
+    <string name="nema_slike">No image selected!</string>
+    <string name="obrisi_poruku">Delete message!</string>
+    <string name="obrisana_knjiga">Book deleted!</string>
+    <string name="nema_knjige">Book not found.</string>
+    <string name="spremi">Save</string>
+    <string name="odustali_ste">You have cancelled</string>
+    <string name="odaberi_opciju">Select an option!</string>
+    <string name="kamera">Camera</string>
+    <string name="azuriranje">Data successfully updated.</string>
+    <string name="neazuriranje">Error updating data.</string>
+    <string name="galerija">Gallery</string>
+    <string name="nijedosla_slika">No image received!</string>
+    <string name="podaci_neispravni">Incorrect data sent.</string>
+    <string name="popuni_polja">Fill in all fields!</string>
+    <string name="prijava_uspjesna">Login successful!</string>
+    <string name="prijava_neuspjesna">Login failed!</string>
+    <string name="razlicita_lozinka">Passwords do not match!</string>
+    <string name="registar_uspjeh">Registration successful!</string>
+    <string name="registar_neuspjeh">Registration failed!</string>
+    <string name="korisnik_dodan">User successfully added.</string>
+    <string name="knjiga_dodana">Book successfully added.</string>
+    <string name="knjiga_nedodana">Error adding book.</string>
+    <string name="korisnik_nedodan">Error adding user.</string>
+    <string name="obrisi_knjigu">"Are you sure you want to delete this book?"</string>
+    <string name="obrisi_sliku">"Are you sure you want to delete this image?"</string>
 
     <string name="godina_izdanja">Year of publication:</string>
     <string name="unesite_godinu_izdanja">Enter year of publication</string>
@@ -43,20 +84,19 @@
     <string name="unesite_opis_knjige">Enter book description</string>
 
     <string name="dodaj_knjigu">Add book</string>
-
     <string name="odustani_add">Cancel</string>
-
     <string name="pretrazi_knjige">Search books</string>
-
     <string name="dodaj_novu_knjigu">Add new book</string>
-
     <string name="kontaktiraj">Contact</string>
-
     <string name="azuriraj">Update</string>
-
     <string name="obrisi">Delete</string>
-
     <string name="spremi_promjene">Save changes</string>
-
     <string name="odustani_update">Cancel</string>
+    <string name="otvori_kameru">Open camera</string>
+    <string name="potvrdi">Confirm</string>
+    <string name="otvori_galeriju">Open gallery</string>
+    <string name="pretrazi">Search</string>
+
+
+    <string name="title_activity_camera">Camera</string>
 </resources>

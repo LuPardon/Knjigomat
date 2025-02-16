@@ -1,5 +1,6 @@
 package com.example.knjigomat.ui.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Base64;
@@ -12,11 +13,13 @@ import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.example.knjigomat.R;
 import com.example.knjigomat.books.Book;
+import com.example.knjigomat.chat.ConversationActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -41,7 +44,7 @@ public class ReadBookFragment extends Fragment {
         Bundle b = this.getArguments();
         // Dohvaćanje Bundle-a iz Intenta
         if (b == null) {
-            Toast.makeText(getContext(), "Podaci neispravno poslani", Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(), this.getResources().getString(R.string.podaci_neispravni), Toast.LENGTH_LONG).show();
             return view;
         }
 
@@ -98,27 +101,47 @@ public class ReadBookFragment extends Fragment {
             });
 
             FirebaseFirestore db = FirebaseFirestore.getInstance();
-            btnDeleteBook.setOnClickListener(v ->
+            btnDeleteBook.setOnClickListener(v -> {
+                new AlertDialog.Builder(getContext())
+                        .setIconAttribute(android.R.attr.alertDialogIcon)
+                        .setTitle(this.getResources().getString(R.string.obrisi))
+                        .setMessage(this.getResources().getString(R.string.obrisi_knjigu))
+                        .setPositiveButton(getResources().getString(R.string.da), (dialog, which) -> {
+                            db.collection("knjige").document(knjigaID)
+                                    .delete()
+                                    .addOnSuccessListener(aVoid -> {
+                                        Toast.makeText(getContext(), this.getResources().getString(R.string.obrisana_knjiga), Toast.LENGTH_LONG).show();
+                                        getActivity().getSupportFragmentManager().beginTransaction()
+                                                .replace(R.id.main_fragment_container, AllBooksFragment.class, null)
+                                                .addToBackStack("read")
+                                                .commit();
+                                    })
+                                    .addOnFailureListener(e -> {
+                                        Toast.makeText(getContext(), "Error", Toast.LENGTH_LONG).show();
+                                    });
+                        })
+                        .setNegativeButton(getResources().getString(R.string.ne), null)
+                        .show();
+            });
 
-                    db.collection("knjige").document(knjigaID)
-                            .delete()
-                            .addOnSuccessListener(aVoid -> {
-                                Toast.makeText(getContext(), "Obrisana knjiga", Toast.LENGTH_LONG).show();
-                                getActivity().getSupportFragmentManager().beginTransaction()
-                                        .replace(R.id.main_fragment_container, AllBooksFragment.class, null)
-                                        .addToBackStack("read")
-                                        .commit();
-                            })
-                            .addOnFailureListener(e -> {
-                                Toast.makeText(getContext(), "Ovdje će biti chat između osoba", Toast.LENGTH_LONG).show();
-                            }));
         } else {
             // Prikaz gumba za kontakt
             btnKontaktBook.setVisibility(View.VISIBLE);
             btnUpdateBook.setVisibility(View.GONE);
             btnDeleteBook.setVisibility(View.GONE);
 
-            btnKontaktBook.setOnClickListener(v -> Toast.makeText(getContext(), "Ovdje će biti chat između osoba", Toast.LENGTH_LONG).show());
+            btnKontaktBook.setOnClickListener(v -> {
+                Intent intent = new Intent(getContext(), ConversationActivity.class);
+                Bundle args = new Bundle();
+                args.putString("nameReceiver", book.getVlasnikID());
+                args.putString("receiverID", book.getVlasnikID());
+                args.putString("naslov", book.getNaslov());
+                args.putString("slika_knjige", book.getSlika());
+                intent.putExtras(args);
+
+                getContext().startActivity(intent);
+                Toast.makeText(getContext(), "Chat", Toast.LENGTH_LONG).show();
+            });
 
         }
 
@@ -157,13 +180,6 @@ public class ReadBookFragment extends Fragment {
                 .asBitmap()
                 .load(imageByteArray)
                 .into(imageView);
-
-//        if (slika != null && !slika.isEmpty()) {
-//            Picasso.get().load(slika).into(imageView);
-//        } else {
-//            Picasso.get().load("https://media.istockphoto.com/id/183890264/photo/upright-red-book-with-clipping-path.jpg?s=612x612&w=0&k=20&c=zm6sEPnc4zK4MNj307pm3tzgxTbex2sOnb1Ip5hglaA=").into(imageView);
-//        }
-
     }
 
     @Override
@@ -176,11 +192,11 @@ public class ReadBookFragment extends Fragment {
                         book = snapshot.toObject(Book.class);
                         populateFields(snapshot);
                     } else {
-                        Toast.makeText(getContext(), "Knjiga nije pronađena.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), this.getResources().getString(R.string.nema_knjige), Toast.LENGTH_SHORT).show();
                     }
                 })
                 .addOnFailureListener(e -> {
-                    Toast.makeText(getContext(), "Greška prilikom dohvaćanja podataka.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), this.getResources().getString(R.string.greska_dohvacanje), Toast.LENGTH_SHORT).show();
                 });
     }
 }

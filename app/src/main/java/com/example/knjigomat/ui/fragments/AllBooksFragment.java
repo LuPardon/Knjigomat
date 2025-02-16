@@ -22,24 +22,35 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 
 
 public class AllBooksFragment extends Fragment {
-
     private RecyclerView recyclerView;
+
+    // Deklaracija UI elemenata
     private BookAdapter adapter;
-    private List<Book> bookList;
-    private List<Book> originalBookList;
+    private List<Book> bookList; // Lista knjiga za prikaz
+    private List<Book> originalBookList; // Originalna lista za filtriranje
     private SearchView searchBar;
     private Spinner zanr_dropdown, nakladnik_dropdown, lokacija_dropdown, dostupno_dropdown, godinaIzdanja_dropdown, jezikIzdanja_dropdown, brojStranica_dropdown, uvez_dropdown;
+
+    // Liste za podatke u Spinnerima
     private List<String> zanrovi, nakladnici, lokacije, dostupno, godineIzdanja, jeziciIzdanja, brojStranica, uvezi;
-    private String odabraniZanr, odabraniNakladnik, odabranaLokacija, odabranaDostupnost, odabranaGodina, odabraniJezik, odabraniBrStr, odabraniUvez;
+
+    // Pohrana odabranih filtera
+    private String odabraniZanr = "", odabraniNakladnik = "", odabranaLokacija = "", odabranaDostupnost = "", odabranaGodina = "", odabraniJezik = "", odabraniBrStr = "", odabraniUvez = "";
+
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_all_books, container, false);
+
+        // Inicijalizacija RecyclerView-a
+        recyclerView = view.findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         // Inicijalizacija popisa knjiga
         bookList = new ArrayList<>();
@@ -54,6 +65,7 @@ public class AllBooksFragment extends Fragment {
         uvezi = new ArrayList<>();
 
         // Postavljanje RecyclerView-a
+        // Postavljanje adaptera za RecyclerView
         recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         adapter = new BookAdapter(requireContext(), bookList);
@@ -69,19 +81,17 @@ public class AllBooksFragment extends Fragment {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                filterBooks(newText); // Pozivanje metode za filtriranje
+                filterBooks(newText); // Pozivanje metode za filtriranje knjiga
                 return true;
             }
         });
-
-
         return view;
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        //get the spinner from the xml.
+        // Inicijalizacija dropdown filtera
         zanr_dropdown = view.findViewById(R.id.zanr_spinner);
         nakladnik_dropdown = view.findViewById(R.id.nakladnik_spinner);
         lokacija_dropdown = view.findViewById(R.id.lokacija_spinner);
@@ -109,6 +119,7 @@ public class AllBooksFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        // Čišćenje podataka prije ponovnog dohvaćanja
         bookList.clear();
         originalBookList.clear();
         zanrovi.clear();
@@ -119,14 +130,6 @@ public class AllBooksFragment extends Fragment {
         brojStranica.clear();
         uvezi.clear();
 
-        zanrovi.add(getResources().getString(R.string.zanr));
-        nakladnici.add(getResources().getString(R.string.nakladnik));
-        lokacije.add(getResources().getString(R.string.lokacija));
-        godineIzdanja.add(getResources().getString(R.string.godina_izdanja));
-        jeziciIzdanja.add(getResources().getString(R.string.jezik_izdanja));
-        brojStranica.add(getResources().getString(R.string.broj_stranica));
-        uvezi.add(getResources().getString(R.string.uvez));
-
 
         // Inicijalizacija Firebase Firestore-a
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -135,37 +138,72 @@ public class AllBooksFragment extends Fragment {
             for (DocumentSnapshot document : queryDocumentSnapshots) {
                 Book book = document.toObject(Book.class);
                 if (book != null) {
-                    zanrovi.add(book.getZanr());
-                    nakladnici.add(book.getNakladnik());
-                    lokacije.add(book.getLokacija());
-                    godineIzdanja.add(Integer.toString(book.getGodinaIzdanja()));
-                    jeziciIzdanja.add(book.getJezikIzdanja());
-                    uvezi.add(book.getUvez());
-                    brojStranica.add(Integer.toString(book.getBrojStranica()));
+                    // Provjeri postoji li već vrijednost u listi prije dodavanja
+                    if (!zanrovi.contains(book.getZanr())) {
+                        zanrovi.add(book.getZanr());
+                    }
+                    if (!nakladnici.contains(book.getNakladnik())) {
+                        nakladnici.add(book.getNakladnik());
+                    }
+                    if (!lokacije.contains(book.getLokacija())) {
+                        lokacije.add(book.getLokacija());
+                    }
+                    if (!godineIzdanja.contains(Integer.toString(book.getGodinaIzdanja()))) {
+                        godineIzdanja.add(Integer.toString(book.getGodinaIzdanja()));
+                    }
+                    if (!jeziciIzdanja.contains(book.getJezikIzdanja().trim().toLowerCase(Locale.ROOT))) {
+                        jeziciIzdanja.add(book.getJezikIzdanja().trim().toLowerCase(Locale.ROOT));
+                    }
+                    if (!uvezi.contains(book.getUvez())) {
+                        uvezi.add(book.getUvez());
+                    }
+                    if (!brojStranica.contains(Integer.toString(book.getBrojStranica()))) {
+                        brojStranica.add(Integer.toString(book.getBrojStranica()));
+                    }
 
                     book.setKnjigaID(document.getId());
                     bookList.add(book);
                     originalBookList.add(book); // Spremanje originalne liste za filtriranje
                 }
             }
+
+            // Sortiranje popisa
+            Collections.sort(zanrovi);
+            Collections.sort(nakladnici);
+            Collections.sort(lokacije);
+            Collections.sort(godineIzdanja);
+            Collections.sort(jeziciIzdanja);
+            Collections.sort(uvezi);
+            Collections.sort(brojStranica);
+
+            // Dodavanje početne opcije u dropdown menije
+            zanrovi.add(0, getResources().getString(R.string.zanr));
+            nakladnici.add(0, getResources().getString(R.string.nakladnik));
+            lokacije.add(0, getResources().getString(R.string.lokacija));
+            godineIzdanja.add(0, getResources().getString(R.string.godina_izdanja));
+            jeziciIzdanja.add(0, getResources().getString(R.string.jezik_izdanja));
+            brojStranica.add(0, getResources().getString(R.string.broj_stranica));
+            uvezi.add(0, getResources().getString(R.string.uvez));
+
             adapter.notifyDataSetChanged();
 
+            // Postavljanje adaptera za Spinner za žanr
             ArrayAdapter<String> zanr_adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, zanrovi);
             zanr_dropdown.setAdapter(zanr_adapter);
 
+            // Postavljanje listenera za odabir žanra
             zanr_dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    odabraniZanr = parent.getSelectedItem().toString();
-                    FilterBooks();
+                    odabraniZanr = parent.getSelectedItem().toString(); // Spremanje odabranog žanra
+                    FilterBooks(); // Pozivanje metode za filtriranje
                 }
-
                 @Override
                 public void onNothingSelected(AdapterView<?> parent) {
-
                 }
             });
 
+            // Ponovljeni postupak za ostale filtre (nakladnik, lokacija, dostupnost, godina izdanja, jezik izdanja, broj stranica, uvez)
             ArrayAdapter<String> nakladnik_adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, nakladnici);
             nakladnik_dropdown.setAdapter(nakladnik_adapter);
 
@@ -175,10 +213,8 @@ public class AllBooksFragment extends Fragment {
                     odabraniNakladnik = parent.getSelectedItem().toString();
                     FilterBooks();
                 }
-
                 @Override
                 public void onNothingSelected(AdapterView<?> parent) {
-
                 }
             });
             ArrayAdapter<String> lokacija_adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, lokacije);
@@ -190,13 +226,10 @@ public class AllBooksFragment extends Fragment {
                     odabranaLokacija = parent.getSelectedItem().toString();
                     FilterBooks();
                 }
-
                 @Override
                 public void onNothingSelected(AdapterView<?> parent) {
-
                 }
             });
-
             ArrayAdapter<String> dostupno_adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, dostupno);
             dostupno_dropdown.setAdapter(dostupno_adapter);
 
@@ -206,12 +239,10 @@ public class AllBooksFragment extends Fragment {
                     odabranaDostupnost = parent.getSelectedItem().toString();
                     FilterBooks();
                 }
-
                 @Override
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
             });
-
             ArrayAdapter<String> godinaIzdanja_adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, godineIzdanja);
             godinaIzdanja_dropdown.setAdapter(godinaIzdanja_adapter);
 
@@ -221,13 +252,10 @@ public class AllBooksFragment extends Fragment {
                     odabranaGodina = parent.getSelectedItem().toString();
                     FilterBooks();
                 }
-
                 @Override
                 public void onNothingSelected(AdapterView<?> parent) {
-
                 }
             });
-
             ArrayAdapter<String> jezikIzdanja_adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, jeziciIzdanja);
             jezikIzdanja_dropdown.setAdapter(jezikIzdanja_adapter);
 
@@ -237,12 +265,10 @@ public class AllBooksFragment extends Fragment {
                     odabraniJezik = parent.getSelectedItem().toString();
                     FilterBooks();
                 }
-
                 @Override
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
             });
-
             ArrayAdapter<String> brojStranica_adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, brojStranica);
             brojStranica_dropdown.setAdapter(brojStranica_adapter);
 
@@ -252,13 +278,10 @@ public class AllBooksFragment extends Fragment {
                     odabraniBrStr = parent.getSelectedItem().toString();
                     FilterBooks();
                 }
-
                 @Override
                 public void onNothingSelected(AdapterView<?> parent) {
-
                 }
             });
-
             ArrayAdapter<String> uvez_adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, uvezi);
             uvez_dropdown.setAdapter(uvez_adapter);
 
@@ -268,25 +291,23 @@ public class AllBooksFragment extends Fragment {
                     odabraniUvez = parent.getSelectedItem().toString();
                     FilterBooks();
                 }
-
                 @Override
                 public void onNothingSelected(AdapterView<?> parent) {
-
                 }
             });
 
         }).addOnFailureListener(e -> {
-            Toast.makeText(getContext(), "Greška pri dohvaćanju podataka", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), this.getResources().getString(R.string.greska_dohvacanje), Toast.LENGTH_SHORT).show();
         });
     }
 
-    //Filtriranje
+    // Metoda za filtriranje podataka
     private void FilterBooks() {
-        bookList.clear();
-        bookList.addAll(originalBookList);
+        bookList.clear(); // Resetiranje liste knjiga
+        bookList.addAll(originalBookList); // Vraćanje originalne liste knjiga
 
         //ŽANR
-        if (odabraniZanr != getResources().getString(R.string.zanr)) {
+        if (!odabraniZanr.isEmpty() && odabraniZanr != getResources().getString(R.string.zanr)) {
             List<Book> filteredList = new ArrayList<>();
             for (Book book : bookList) {
                 if (book.getZanr() == odabraniZanr) {
@@ -297,7 +318,7 @@ public class AllBooksFragment extends Fragment {
             bookList.addAll(filteredList);
         }
         //NAKLADNIK
-        if (odabraniNakladnik != getResources().getString(R.string.nakladnik)) {
+        if (!odabraniNakladnik.isEmpty() && odabraniNakladnik != getResources().getString(R.string.nakladnik)) {
             List<Book> filteredList = new ArrayList<>();
             for (Book book : bookList) {
                 if (book.getNakladnik() == odabraniNakladnik) {
@@ -308,7 +329,7 @@ public class AllBooksFragment extends Fragment {
             bookList.addAll(filteredList);
         }
         //LOKACIJA
-        if (odabranaLokacija != getResources().getString(R.string.lokacija)) {
+        if (!odabranaLokacija.isEmpty() && odabranaLokacija != getResources().getString(R.string.lokacija)) {
             List<Book> filteredList = new ArrayList<>();
             for (Book book : bookList) {
                 if (book.getLokacija() == odabranaLokacija) {
@@ -319,7 +340,7 @@ public class AllBooksFragment extends Fragment {
             bookList.addAll(filteredList);
         }
         //DOSTUPNO
-        if (odabranaDostupnost != getResources().getString(R.string.dostupno)) {
+        if (!odabranaDostupnost.isEmpty() && odabranaDostupnost != getResources().getString(R.string.dostupno)) {
             List<Book> filteredList = new ArrayList<>();
             boolean dostupnost = getResources().getString(R.string.da).equalsIgnoreCase(odabranaDostupnost);
             for (Book book : bookList) {
@@ -332,7 +353,7 @@ public class AllBooksFragment extends Fragment {
         }
 
         //GODINA IZDANJA
-        if (odabranaGodina != null && odabranaGodina != getResources().getString(R.string.godina_izdanja) && !odabranaGodina.isEmpty()) {
+        if (odabranaGodina != null && !odabranaGodina.isEmpty() && odabranaGodina != getResources().getString(R.string.godina_izdanja)) {
             List<Book> filteredList = new ArrayList<>();
             for (Book book : bookList) {
                 if (book.getGodinaIzdanja() == Integer.parseInt(odabranaGodina)) {
@@ -344,10 +365,10 @@ public class AllBooksFragment extends Fragment {
         }
 
         //JEZIK IZDANJA
-        if (odabraniJezik != getResources().getString(R.string.jezik_izdanja)) {
+        if (!odabraniJezik.isEmpty() && odabraniJezik != getResources().getString(R.string.jezik_izdanja)) {
             List<Book> filteredList = new ArrayList<>();
             for (Book book : bookList) {
-                if (book.getJezikIzdanja() == odabraniJezik) {
+                if (book.getJezikIzdanja().toLowerCase(Locale.ROOT).trim().equals(odabraniJezik.toLowerCase(Locale.ROOT).trim())) {
                     filteredList.add(book);
                 }
             }
@@ -356,7 +377,7 @@ public class AllBooksFragment extends Fragment {
         }
 
         //BROJ STRANICA
-        if (odabraniBrStr != getResources().getString(R.string.broj_stranica) && !brojStranica.isEmpty()) {
+        if (!odabraniBrStr.isEmpty() && odabraniBrStr != getResources().getString(R.string.broj_stranica) && !brojStranica.isEmpty()) {
             List<Book> filteredList = new ArrayList<>();
             for (Book book : bookList) {
                 if (book.getBrojStranica() == Integer.parseInt(odabraniBrStr)) {
@@ -368,7 +389,7 @@ public class AllBooksFragment extends Fragment {
         }
 
         //UVEZ
-        if (odabraniUvez != getResources().getString(R.string.uvez)) {
+        if (!odabraniUvez.isEmpty() && odabraniUvez != getResources().getString(R.string.uvez)) {
             List<Book> filteredList = new ArrayList<>();
             for (Book book : bookList) {
                 if (book.getUvez() == odabraniUvez) {
@@ -379,7 +400,6 @@ public class AllBooksFragment extends Fragment {
             bookList.addAll(filteredList);
         }
 
-
-        adapter.notifyDataSetChanged();
+        adapter.notifyDataSetChanged(); // Ažuriranje prikaza podataka
     }
 }

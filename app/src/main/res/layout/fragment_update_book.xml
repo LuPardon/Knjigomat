@@ -36,6 +36,7 @@ android:padding="16dp"
         android:layout_height="wrap_content"
         android:hint="@string/unesite_naziv_knjige"
         android:textColor="#000000"
+        android:padding="4dp"
         android:textSize="16sp"
         android:background="@drawable/edittext_background"
         android:layout_marginBottom="8dp" />
@@ -46,6 +47,7 @@ android:padding="16dp"
         android:layout_height="wrap_content"
         android:text="@string/autor"
         android:textColor="#000000"
+        android:textStyle="bold"
         android:textSize="16sp"
         android:layout_marginBottom="4dp" />
 
@@ -56,6 +58,8 @@ android:padding="16dp"
         android:hint="@string/unesite_ime_autora"
         android:textColor="#000000"
         android:textSize="16sp"
+        android:padding="4dp"
+
         android:background="@drawable/edittext_background"
         android:layout_marginBottom="8dp" />
 
@@ -65,6 +69,7 @@ android:padding="16dp"
         android:layout_height="wrap_content"
         android:text="@string/zanr"
         android:textColor="#000000"
+        android:textStyle="bold"
         android:textSize="16sp"
         android:layout_marginBottom="4dp" />
 
@@ -74,6 +79,8 @@ android:padding="16dp"
         android:layout_height="wrap_content"
         android:hint="@string/unesite_zanr_knjige"
         android:textColor="#000000"
+        android:padding="4dp"
+
         android:textSize="16sp"
         android:background="@drawable/edittext_background"
         android:layout_marginBottom="8dp" />
@@ -84,6 +91,7 @@ android:padding="16dp"
         android:layout_height="wrap_content"
         android:text="@string/nakladnik"
         android:textColor="#000000"
+        android:textStyle="bold"
         android:textSize="16sp"
         android:layout_marginBottom="4dp" />
 
@@ -93,6 +101,8 @@ android:padding="16dp"
         android:layout_height="wrap_content"
         android:hint="@string/unesite_ime_nakladnika"
         android:textColor="#000000"
+        android:padding="4dp"
+
         android:textSize="16sp"
         android:background="@drawable/edittext_background"
         android:layout_marginBottom="8dp" />
@@ -103,6 +113,7 @@ android:padding="16dp"
         android:layout_height="wrap_content"
         android:text="@string/lokacija"
         android:textColor="#000000"
+        android:textStyle="bold"
         android:textSize="16sp"
         android:layout_marginBottom="4dp" />
 
@@ -111,6 +122,8 @@ android:padding="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/unesite_lokaciju"
+        android:padding="4dp"
+
         android:textColor="#000000"
         android:textSize="16sp"
         android:background="@drawable/edittext_background"
@@ -122,6 +135,7 @@ android:padding="16dp"
         android:layout_height="wrap_content"
         android:text="@string/dostupno"
         android:textColor="#000000"
+        android:textStyle="bold"
         android:textSize="16sp"
         android:layout_marginBottom="4dp" />
 
@@ -140,6 +154,7 @@ android:padding="16dp"
         android:layout_height="wrap_content"
         android:text="@string/godina_izdanja"
         android:textColor="#000000"
+        android:textStyle="bold"
         android:textSize="16sp"
         android:layout_marginBottom="4dp" />
 
@@ -149,6 +164,8 @@ android:padding="16dp"
         android:layout_height="wrap_content"
         android:hint="@string/unesite_godinu_izdanja"
         android:textColor="#000000"
+        android:padding="4dp"
+
         android:textSize="16sp"
         android:inputType="number"
         android:background="@drawable/edittext_background"
@@ -160,6 +177,7 @@ android:padding="16dp"
         android:layout_height="wrap_content"
         android:text="@string/jezik_izdanja"
         android:textColor="#000000"
+        android:textStyle="bold"
         android:textSize="16sp"
         android:layout_marginBottom="4dp" />
 
@@ -168,6 +186,8 @@ android:padding="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/unesite_jezik_izdanja"
+        android:padding="4dp"
+
         android:textColor="#000000"
         android:textSize="16sp"
         android:background="@drawable/edittext_background"
@@ -179,6 +199,7 @@ android:padding="16dp"
         android:layout_height="wrap_content"
         android:text="@string/broj_stranica"
         android:textColor="#000000"
+        android:textStyle="bold"
         android:textSize="16sp"
         android:layout_marginBottom="4dp" />
 
@@ -187,6 +208,8 @@ android:padding="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/unesite_broj_stranica"
+        android:padding="4dp"
+
         android:textColor="#000000"
         android:textSize="16sp"
         android:inputType="number"
@@ -199,6 +222,7 @@ android:padding="16dp"
         android:layout_height="wrap_content"
         android:text="@string/uvez"
         android:textColor="#000000"
+        android:textStyle="bold"
         android:textSize="16sp"
         android:layout_marginBottom="4dp" />
 
@@ -206,6 +230,8 @@ android:padding="16dp"
         android:id="@+id/etUpdateBookBinding"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="4dp"
+
         android:hint="@string/unesite_vrstu_uveza"
         android:textColor="#000000"
         android:textSize="16sp"
@@ -219,6 +245,7 @@ android:padding="16dp"
         android:layout_height="wrap_content"
         android:text="@string/opis"
         android:textColor="#000000"
+        android:textStyle="bold"
         android:textSize="16sp"
         android:layout_marginBottom="4dp" />
 
@@ -226,6 +253,8 @@ android:padding="16dp"
         android:id="@+id/etUpdateBookDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="4dp"
+
         android:hint="@string/unesite_opis_knjige"
         android:textColor="#000000"
         android:textSize="16sp"

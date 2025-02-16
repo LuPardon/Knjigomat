@@ -6,6 +6,22 @@
     android:padding="16dp">
 
     <EditText
+        android:id="@+id/etRegisterFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/ime"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/etRegisterLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/prezime"
+        android:inputType="text" />
+
+    <EditText
         android:id="@+id/etRegisterEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,16 +32,25 @@
         android:id="@+id/etRegisterPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:hint="@string/lozinka"
-        android:inputType="textPassword"
-        android:layout_marginTop="8dp" />
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/etRegisterPassword2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/lozinka2"
+        android:inputType="textPassword" />
+
 
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/registriraj_se"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        android:text="@string/registriraj_se" />
 
     <Button
         android:id="@+id/btnLogin2"

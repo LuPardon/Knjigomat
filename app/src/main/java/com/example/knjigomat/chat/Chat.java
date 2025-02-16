@@ -2,16 +2,16 @@ package com.example.knjigomat.chat;
 
 import java.util.List;
 
-public class chat {
+public class Chat {
     private String id;               // Jedinstveni ID chata
     private List<Message> messages;   // Lista poruka
     private List<String> participants; // Lista korisnika u chatu
 
-    public chat() {
+    public Chat() {
         // Prazan konstruktor potreban za Firebase
     }
 
-    public chat(String id, List<Message> messages, List<String> participants) {
+    public Chat(String id, List<Message> messages, List<String> participants) {
         this.id = id;
         this.messages = messages;
         this.participants = participants;

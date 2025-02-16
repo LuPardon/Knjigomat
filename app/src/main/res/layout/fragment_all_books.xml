@@ -6,112 +6,147 @@
     android:orientation="vertical"
     tools:context=".ui.fragments.AllBooksFragment">
 
-    <LinearLayout
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="3dp">
+        android:layout_height="match_parent">
 
-        <Spinner
-            android:id="@+id/zanr_spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@android:drawable/btn_dropdown"
-            android:focusable="true"
-            android:focusableInTouchMode="true" />
+        <!-- Glavni sadržaj (RecyclerView) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <Spinner
-            android:id="@+id/uvez_spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@android:drawable/btn_dropdown"
-            android:focusable="true"
-            android:focusableInTouchMode="true" />
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/light_purple"
+                android:queryHint="@string/pretrazi_knjige" />
+
+            <!-- RecyclerView za prikaz knjiga -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                tools:listitem="@layout/item_book" />
+
+        </LinearLayout>
+
+        <!-- Navigation Drawer za filtere -->
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigation_view"
+            android:layout_width="280dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content "
+                    android:orientation="vertical"
+                    android:padding="3dp">
+
+                    <Spinner
+                        android:id="@+id/zanr_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/spinner_bg"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true" />
+
+                    <Spinner
+                        android:id="@+id/uvez_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/spinner_bg"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true" />
 
 
-        <Spinner
-            android:id="@+id/lokacija_spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@android:drawable/btn_dropdown"
-            android:focusable="true"
-            android:focusableInTouchMode="true" />
+                    <Spinner
+                        android:id="@+id/lokacija_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/spinner_bg"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true" />
 
 
-        <Spinner
-            android:id="@+id/brojStranica_spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@android:drawable/btn_dropdown"
-            android:focusable="true"
-            android:focusableInTouchMode="true" />
+                    <Spinner
+                        android:id="@+id/brojStranica_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/spinner_bg"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true" />
 
 
-    </LinearLayout>
+                    <Spinner
+                        android:id="@+id/nakladnik_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/spinner_bg"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="3dp">
+                    <Spinner
+                        android:id="@+id/dostupno_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/spinner_bg"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true" />
 
-        <Spinner
-            android:id="@+id/nakladnik_spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@android:drawable/btn_dropdown"
-            android:focusable="true"
-            android:focusableInTouchMode="true" />
+                    <Spinner
+                        android:id="@+id/godinaIzdanja_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/spinner_bg"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true" />
 
-        <Spinner
-            android:id="@+id/dostupno_spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@android:drawable/btn_dropdown"
-            android:focusable="true"
-            android:focusableInTouchMode="true" />
+                    <Spinner
+                        android:id="@+id/jezikIzdanja_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/spinner_bg"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true" />
 
-        <Spinner
-            android:id="@+id/godinaIzdanja_spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@android:drawable/btn_dropdown"
-            android:focusable="true"
-            android:focusableInTouchMode="true" />
+                </LinearLayout>
+            </ScrollView>
 
-        <Spinner
-            android:id="@+id/jezikIzdanja_spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@android:drawable/btn_dropdown"
-            android:focusable="true"
-            android:focusableInTouchMode="true" />
-
-    </LinearLayout>
-
-    <!-- Search View za pretraživanje knjiga -->
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/searchView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:background="@color/light_purple"
-        android:queryHint="@string/pretrazi_knjige" />
-
-    <!-- RecyclerView za prikaz knjiga -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-        tools:listitem="@layout/item_book" />
+        </com.google.android.material.navigation.NavigationView>
+    </androidx.drawerlayout.widget.DrawerLayout>
 
 </LinearLayout>

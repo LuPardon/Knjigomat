@@ -2,11 +2,15 @@
     <string name="app_name">Knjigomat</string>
     <string name="email">Email</string>
     <string name="lozinka">Lozinka</string>
+    <string name="lozinka2">Ponovite lozinku</string>
     <string name="prijavi_se">Prijavi se</string>
+    <string name="ime">Ime</string>
+    <string name="prezime">Prezime</string>
     <string name="registriraj_se">Registriraj se</string>
 
 
     <string name="naziv">Naziv:</string>
+    <string name="upit_knjiga">Upit za knjigu:</string>
     <string name="unesite_naziv_knjige">Unesite naziv knjige</string>
 
     <string name="autor">Autor:</string>
@@ -26,8 +30,58 @@
     <string name="da">Da</string>
     <string name="ne">Ne</string>
 
+    <string name="sve_knjige">Sve knjige</string>
+    <string name="razgovori">Razgovori</string>
+    <string name="moje_knjige">Moje knjige</string>
+    <string name="odjava">Odjava</string>
+
+
+    <string name="logout_app">Jeste li sigurni da se želite odjaviti iz aplikacije?</string>
+    <string name="logout_info">Odjava!</string>
+
+    <string name="sebi_poruka">Ne možete sami sebi poslati poruku...</string>
+    <string name="nepoznat_korisnik">Nepoznati korisnik</string>
+    <string name="greska_dohvacanje">Greška pri dohvaćanju!</string>
+    <string name="greska_ucitavanje">Greška pri učitavanju!</string>
+    <string name="poslana_slika">Poslana slika ...</string>
+    <string name="nema_slike">Nije odabrana slika!</string>
+    <string name="obrisi_poruku">Obriši poruku!</string>
+    <string name="obrisana_knjiga">Obrisana knjiga!</string>
+    <string name="nema_knjige">Knjiga nije pronađena.</string>
+    <string name="spremi">Spremi</string>
+    <string name="odustali_ste">Odustali ste</string>
+    <string name="odaberi_opciju">Odaberite opciju!</string>
+    <string name="kamera">Kamera</string>
+    <string name="otvori_kameru">Otvori kameru</string>
+    <string name="pretrazi">Pretraži</string>
+
+    <string name="potvrdi">Potvrdi</string>
+    <string name="otvori_galeriju">Odaberi iz galerije</string>
+    <string name="azuriranje">Podaci su uspješno ažurirani.</string>
+    <string name="neazuriranje">Greška prilikom ažuriranja.</string>
+    <string name="galerija">Galerija</string>
+    <string name="nijedosla_slika">Nije primljena slika!</string>
+    <string name="podaci_neispravni">Podaci neispravno poslani.</string>
+    <string name="popuni_polja">Popunite sva polja!</string>
+    <string name="prijava_uspjesna">Uspješna prijava!</string>
+    <string name="prijava_neuspjesna">Neuspješna prijava!</string>
+    <string name="razlicita_lozinka">Lozinke se ne podudaraju!</string>
+    <string name="registar_uspjeh">Registracija uspješna!</string>
+    <string name="registar_neuspjeh">Registracija neuspješna!</string>
+    <string name="korisnik_dodan">Korisnik uspješno dodan.</string>
+    <string name="knjiga_dodana">Knjiga uspješno dodana.</string>
+    <string name="knjiga_nedodana">Greška pri dodavanju knjige.</string>
+    <string name="korisnik_nedodan">Greška pri dodavanju korisnika.</string>
+    <string name="obrisi_knjigu">"Jeste li sigurni da želite obrisati knjigu?"</string>
+    <string name="obrisi_sliku">"Jeste li sigurni da želite obrisati sliku?"</string>
+    <!--    <string name="nijedosla_slika">No image received!</string>-->
+    <!--    <string name="obrisi_knjigu">"Are you sure you want to Delete this book?"</string>-->
+    <!--    <string name="nema_slike">No image received!</string>-->
+    <!--    <string name="obrisi_poruku">Delete Message</string>-->
+
 
     <string name="godina_izdanja">Godina izdanja:</string>
+
     <string name="unesite_godinu_izdanja">Unesite godinu izdanja</string>
 
     <string name="jezik_izdanja">Jezik izdanja:</string>
@@ -59,4 +113,7 @@
     <string name="spremi_promjene">Spremi promjene</string>
 
     <string name="odustani_update">Odustani</string>
+
+    <string name="title_activity_camera">Kamera</string>
+
 </resources>

@@ -6,7 +6,7 @@
     android:background="#1C1B1B"
     android:orientation="vertical"
     android:weightSum="10"
-    tools:context=".chat.fragment_screen4">
+    tools:context=".chat.ContactsFragment">
 
     <RelativeLayout
         android:id="@+id/rl_actionbar"
@@ -14,8 +14,17 @@
         android:layout_height="0dp"
         android:layout_weight="1.2"
         android:background="@drawable/rectangle_bottom_curved"
+        android:layout_centerHorizontal="true"
         android:backgroundTint="#1F1F1F">
 
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/back_arrow_icon"
+            android:backgroundTint="#696969" />
 
         <RelativeLayout
             android:layout_width="100dp"
@@ -39,7 +48,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_toEndOf="@+id/search_icon"
                 android:background="@null"
-                android:hint="Search"
+                android:hint="@string/pretrazi"
                 android:textColor="#696969"
                 android:textColorHint="#696969" />
         </RelativeLayout>

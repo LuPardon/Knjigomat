@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/light_blue_A200" />
+            <corners android:radius="8dp" />
+            <stroke
+                android:width="2dp"
+                android:color="@color/light_blue_600" />
+        </shape>
+    </item>
+    <item
+        android:bottom="6dp"
+        android:right="12dp"
+        android:top="6dp">
+        <bitmap
+            android:gravity="end|center_vertical"
+            android:scaleType="fitCenter"
+            android:src="@android:drawable/arrow_down_float" />
+    </item>
+</layer-list>

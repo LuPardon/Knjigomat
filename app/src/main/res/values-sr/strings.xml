@@ -1,12 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Knjigomat</string>
     <string name="email">Email</string>
     <string name="lozinka">Lozinka</string>
+    <string name="lozinka2">Ponovite lozinku</string>
     <string name="prijavi_se">Prijavi se</string>
+    <string name="ime">Ime</string>
+    <string name="prezime">Prezime</string>
     <string name="registriraj_se">Registruj se</string>
 
     <string name="naziv">Naziv:</string>
+    <string name="upit_knjiga">Upit za knjigu:</string>
     <string name="unesite_naziv_knjige">Unesite naziv knjige</string>
 
     <string name="autor">Autor:</string>
@@ -23,9 +26,47 @@
 
     <string name="dostupno">Dostupno:</string>
     <string name="ne_da">Ne/Da</string>
-
     <string name="da">Da</string>
     <string name="ne">Ne</string>
+
+    <string name="sve_knjige">Sve knjige</string>
+    <string name="razgovori">Razgovori</string>
+    <string name="moje_knjige">Moje knjige</string>
+    <string name="odjava">Odjava</string>
+
+    <string name="logout_app">Da li ste sigurni da želite da se odjavite iz aplikacije?</string>
+    <string name="logout_info">Odjava!</string>
+
+    <string name="sebi_poruka">Ne možete sami sebi poslati poruku...</string>
+    <string name="nepoznat_korisnik">Nepoznat korisnik</string>
+    <string name="greska_dohvacanje">Greška pri preuzimanju podataka!</string>
+    <string name="greska_ucitavanje">Greška pri učitavanju!</string>
+    <string name="poslana_slika">Poslata slika ...</string>
+    <string name="nema_slike">Nije odabrana slika!</string>
+    <string name="obrisi_poruku">Obriši poruku!</string>
+    <string name="obrisana_knjiga">Knjiga obrisana!</string>
+    <string name="nema_knjige">Knjiga nije pronađena.</string>
+    <string name="spremi">Sačuvaj</string>
+    <string name="odustali_ste">Odustali ste</string>
+    <string name="odaberi_opciju">Izaberite opciju!</string>
+    <string name="kamera">Kamera</string>
+    <string name="azuriranje">Podaci su uspešno ažurirani.</string>
+    <string name="neazuriranje">Greška pri ažuriranju.</string>
+    <string name="galerija">Galerija</string>
+    <string name="nijedosla_slika">Slika nije primljena!</string>
+    <string name="podaci_neispravni">Podaci su poslati neispravno.</string>
+    <string name="popuni_polja">Popunite sva polja!</string>
+    <string name="prijava_uspjesna">Uspešna prijava!</string>
+    <string name="prijava_neuspjesna">Neuspešna prijava!</string>
+    <string name="razlicita_lozinka">Lozinke se ne podudaraju!</string>
+    <string name="registar_uspjeh">Uspešna registracija!</string>
+    <string name="registar_neuspjeh">Neuspešna registracija!</string>
+    <string name="korisnik_dodan">Korisnik uspešno dodat.</string>
+    <string name="knjiga_dodana">Knjiga uspešno dodata.</string>
+    <string name="knjiga_nedodana">Greška pri dodavanju knjige.</string>
+    <string name="korisnik_nedodan">Greška pri dodavanju korisnika.</string>
+    <string name="obrisi_knjigu">"Da li ste sigurni da želite da obrišete knjigu?"</string>
+    <string name="obrisi_sliku">"Da li ste sigurni da želite da obrišete sliku?"</string>
 
     <string name="godina_izdanja">Godina izdanja:</string>
     <string name="unesite_godinu_izdanja">Unesite godinu izdanja</string>
@@ -43,22 +84,17 @@
     <string name="unesite_opis_knjige">Unesite opis knjige</string>
 
     <string name="dodaj_knjigu">Dodaj knjigu</string>
-
     <string name="odustani_add">Odustani</string>
-
     <string name="pretrazi_knjige">Pretraži knjige</string>
-
     <string name="dodaj_novu_knjigu">Dodaj novu knjigu</string>
-
     <string name="kontaktiraj">Kontaktiraj</string>
-
     <string name="azuriraj">Ažuriraj</string>
-
     <string name="obrisi">Obriši</string>
-
     <string name="spremi_promjene">Sačuvaj promene</string>
-
     <string name="odustani_update">Odustani</string>
+    <string name="otvori_kameru">Otvori kameru</string>
+    <string name="potvrdi">Potvrdi</string>
+    <string name="pretrazi">Pretraži</string>
+    <string name="otvori_galeriju">Odaberi iz galerije</string>
+    <string name="title_activity_camera">Kamera</string>
 </resources>
-
-

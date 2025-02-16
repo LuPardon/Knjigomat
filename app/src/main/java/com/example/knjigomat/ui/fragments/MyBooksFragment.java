@@ -111,7 +111,7 @@ public class MyBooksFragment extends Fragment {
             }
             adapter.notifyDataSetChanged();
         }).addOnFailureListener(e -> {
-            Toast.makeText(getContext(), "Greška pri dohvaćanju podataka", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), this.getResources().getString(R.string.greska_dohvacanje), Toast.LENGTH_SHORT).show();
         });
     }
 }

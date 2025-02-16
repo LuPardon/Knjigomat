@@ -2,6 +2,7 @@ package com.example.knjigomat.chat;
 
 import android.content.Context;
 import android.text.InputType;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,25 +14,30 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.knjigomat.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.time.Instant;
+import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-public class screen5RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class ConversationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     Context context;
     List<Message> messageList;
     FirebaseAuth mAuth;
     String receiverDP;
     DatabaseReference reference;
 
-    public screen5RVAdapter(Context context, List<Message> messageList) {
+
+    public ConversationAdapter(Context context, List<Message> messageList, String chatID) {
         this.context = context;
         this.messageList = messageList;
         mAuth = FirebaseAuth.getInstance();
-        reference = FirebaseDatabase.getInstance().getReference("Messages");
+        reference = FirebaseDatabase.getInstance().getReference("Chats").child(chatID).child("Messages");
         reference.keepSynced(true);
     }
 
@@ -67,10 +73,10 @@ public class screen5RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof screen5SendMessageViewHolder) {
             ((screen5SendMessageViewHolder) holder).message.setText(messageList.get(position).getTekst());
-            ((screen5SendMessageViewHolder) holder).time.setText(messageList.get(position).getTimestamp() + "");
+            ((screen5SendMessageViewHolder) holder).time.setText(Instant.ofEpochSecond(messageList.get(position).getTimestamp()).atOffset(ZoneOffset.UTC).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")));
             ((screen5SendMessageViewHolder) holder).relativeLayout.setOnLongClickListener(v -> {
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                builder.setTitle("Edit Message");
+                builder.setTitle(context.getResources().getString(R.string.obrisi_poruku));
 
                 // Set up the input
                 final EditText input = new EditText(context);
@@ -80,50 +86,72 @@ public class screen5RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 builder.setView(input);
 
                 // Set up the buttons
-                builder.setPositiveButton("Delete", (dialog, which) -> reference.child(messageList.get(holder.getAdapterPosition()).getKey()).removeValue());
-                builder.setNegativeButton("Save", (dialog, which) -> {
-                    String text = input.getText().toString();
-                    reference.child(messageList.get(holder.getAdapterPosition()).getKey()).child("message").setValue(text);
+//                String nesto = messageList.get(holder.getAdapterPosition()).getKey();
+                builder.setPositiveButton(context.getResources().getString(R.string.obrisi), (dialog, which) -> {
+                    reference.child(messageList.get(holder.getAdapterPosition()).getKey()).removeValue();
+                    messageList.remove(holder.getAdapterPosition());
+                    notifyDataSetChanged();
                 });
-                builder.setNeutralButton("Cancel", (dialog, which) -> dialog.cancel());
+//                builder.setNegativeButton(context.getResources().getString(R.string.spremi), (dialog, which) -> {
+//                    String text = input.getText().toString();
+//                    reference.child(messageList.get(holder.getAdapterPosition()).getKey()).child("message").setValue(text);
+//                });
+                builder.setNeutralButton(context.getResources().getString(R.string.odustani_update), (dialog, which) -> dialog.cancel());
 
                 builder.show();
                 return true;
             });
-        }
-//        else if (holder instanceof screen5ReceiveMessageViewHolder) {
-//            ((screen5ReceiveMessageViewHolder)holder).message.setText(messageList.get(position).getMessage());
-//            ((screen5ReceiveMessageViewHolder)holder).time.setText(messageList.get(position).getTime());
+        } else if (holder instanceof screen5ReceiveMessageViewHolder) {
+            ((screen5ReceiveMessageViewHolder) holder).message.setText(messageList.get(position).getTekst());
+            ((screen5ReceiveMessageViewHolder) holder).time.setText(Instant.ofEpochSecond(messageList.get(position).getTimestamp()).atOffset(ZoneOffset.UTC).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")));
 //            Picasso.get().load(receiverDP).into(((screen5ReceiveMessageViewHolder)holder).dp);
-//        }
-//        else if (holder instanceof screen5SendImageViewHolder) {
-//            ((screen5SendImageViewHolder)holder).time.setText(messageList.get(position).getTime());
-//            ((screen5SendImageViewHolder)holder).location.setText(messageList.get(position).getLocation());
-////            Picasso.get().load(messageList.get(position).getImage()).into(((screen5SendImageViewHolder)holder).image);
-//        }
-//        else if (holder instanceof screen5ReceiveImageViewHolder) {
-//            ((screen5ReceiveImageViewHolder)holder).time.setText(messageList.get(position).getTime());
-//            ((screen5ReceiveImageViewHolder)holder).location.setText(messageList.get(position).getLocation());
-////            Picasso.get().load(messageList.get(position).getImage()).into(((screen5ReceiveImageViewHolder)holder).image);
-//            Picasso.get().load(receiverDP).into(((screen5ReceiveImageViewHolder)holder).dp);
-//        }
+        } else if (holder instanceof screen5SendImageViewHolder) {
+            ((screen5SendImageViewHolder) holder).time.setText(Instant.ofEpochSecond(messageList.get(position).getTimestamp()).atOffset(ZoneOffset.UTC).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")));
+            byte[] imageByteArray = Base64.decode(messageList.get(position).getTekst(), Base64.DEFAULT);
+
+            Glide.with(context.getApplicationContext()).asBitmap()
+                    .load(imageByteArray).into(((screen5SendImageViewHolder) holder).image);
+
+            ((screen5SendImageViewHolder) holder).relativeLayout.setOnLongClickListener(v -> {
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setTitle(context.getResources().getString(R.string.obrisi));
+
+                // Set up the buttons
+//                String nesto = messageList.get(holder.getAdapterPosition()).getKey();
+                builder.setPositiveButton(context.getResources().getString(R.string.obrisi), (dialog, which) -> {
+                    reference.child(messageList.get(holder.getAdapterPosition()).getKey()).removeValue();
+                    messageList.remove(holder.getAdapterPosition());
+                    notifyDataSetChanged();
+                });
+                builder.setNeutralButton(context.getResources().getString(R.string.odustani_update), (dialog, which) -> dialog.cancel());
+
+                builder.show();
+                return true;
+            });
+        } else if (holder instanceof screen5ReceiveImageViewHolder) {
+            ((screen5ReceiveImageViewHolder) holder).time.setText(Instant.ofEpochSecond(messageList.get(position).getTimestamp()).atOffset(ZoneOffset.UTC).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")));
+            byte[] imageByteArray = Base64.decode(messageList.get(position).getTekst(), Base64.DEFAULT);
+
+            Glide.with(context.getApplicationContext()).asBitmap()
+                    .load(imageByteArray).into(((screen5ReceiveImageViewHolder) holder).image);
+        }
     }
 
     @Override
     public int getItemViewType(int position) {
         Message message = messageList.get(position);
         if (message.getSenderId().equals(mAuth.getUid())) { // Ako je korisnik poslao poruku
-//            if (message.getImage() == null) {
-            return R.layout.send_message_row; // Tekstualna poruka poslana
-//            } else {
-//                return R.layout.send_image_row; // Poslana slika
-//            }
+            if (message.isImage()) {
+                return R.layout.send_image_row; // Poslana slika
+            } else {
+                return R.layout.send_message_row; // Tekstualna poruka poslana
+            }
         } else { // Ako je poruku poslao drugi korisnik
-//            if (message.getImage() == null) {
-            return R.layout.receive_message_row; // Tekstualna poruka primljena
-//            } else {
-//                return R.layout.receive_image_row; // Primljena slika
-//            }
+            if (message.isImage()) {
+                return R.layout.receive_image_row; // Primljena slika
+            } else {
+                return R.layout.receive_message_row; // Tekstualna poruka primljena
+            }
         }
 
     }
@@ -160,7 +188,6 @@ public class screen5RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         public screen5SendImageViewHolder(View itemView) {
             super(itemView);
             time = itemView.findViewById(R.id.time);
-            location = itemView.findViewById(R.id.location);
             relativeLayout = itemView.findViewById(R.id.rl_send_image);
             image = itemView.findViewById(R.id.image);
         }
@@ -189,7 +216,6 @@ public class screen5RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         public screen5ReceiveImageViewHolder(View itemView) {
             super(itemView);
             time = itemView.findViewById(R.id.time);
-            location = itemView.findViewById(R.id.location);
             relativeLayout = itemView.findViewById(R.id.rl_receive_image);
             image = itemView.findViewById(R.id.image);
             dp = itemView.findViewById(R.id.dp);

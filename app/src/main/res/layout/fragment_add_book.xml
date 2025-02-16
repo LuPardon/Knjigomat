@@ -16,8 +16,8 @@
         <ImageView
             android:id="@+id/AddImageView"
             android:layout_width="match_parent"
-            android:background="@drawable/border"
-            android:layout_height="109dp" />
+            android:layout_height="109dp"
+            android:background="@drawable/border" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -35,7 +35,9 @@
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_background"
             android:hint="@string/unesite_naziv_knjige"
+            android:padding="4dp"
             android:textColor="#000000"
+
             android:textSize="16sp" />
 
         <!-- Autor -->
@@ -45,7 +47,8 @@
             android:layout_marginBottom="4dp"
             android:text="@string/autor"
             android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etAddBookAuthor"
@@ -54,7 +57,9 @@
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_background"
             android:hint="@string/unesite_ime_autora"
+            android:padding="4dp"
             android:textColor="#000000"
+
             android:textSize="16sp" />
 
         <!-- Žanr -->
@@ -64,6 +69,7 @@
             android:layout_marginBottom="4dp"
             android:text="@string/zanr"
             android:textColor="#000000"
+            android:textStyle="bold"
             android:textSize="16sp" />
 
         <EditText
@@ -73,7 +79,9 @@
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_background"
             android:hint="@string/unesite_zanr_knjige"
+            android:padding="4dp"
             android:textColor="#000000"
+
             android:textSize="16sp" />
 
         <!-- Nakladnik -->
@@ -83,6 +91,7 @@
             android:layout_marginBottom="4dp"
             android:text="@string/nakladnik"
             android:textColor="#000000"
+            android:textStyle="bold"
             android:textSize="16sp" />
 
         <EditText
@@ -92,7 +101,9 @@
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_background"
             android:hint="@string/unesite_ime_nakladnika"
+            android:padding="4dp"
             android:textColor="#000000"
+
             android:textSize="16sp" />
 
         <!-- Lokacija -->
@@ -102,6 +113,7 @@
             android:layout_marginBottom="4dp"
             android:text="@string/lokacija"
             android:textColor="#000000"
+            android:textStyle="bold"
             android:textSize="16sp" />
 
         <EditText
@@ -111,6 +123,7 @@
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_background"
             android:hint="@string/unesite_lokaciju"
+            android:padding="4dp"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -121,6 +134,7 @@
             android:layout_marginBottom="4dp"
             android:text="@string/dostupno"
             android:textColor="#000000"
+            android:textStyle="bold"
             android:textSize="16sp" />
 
         <Switch
@@ -139,6 +153,7 @@
             android:layout_marginBottom="4dp"
             android:text="@string/godina_izdanja"
             android:textColor="#000000"
+            android:textStyle="bold"
             android:textSize="16sp" />
 
         <EditText
@@ -149,6 +164,7 @@
             android:background="@drawable/edittext_background"
             android:hint="@string/unesite_godinu_izdanja"
             android:inputType="number"
+            android:padding="4dp"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -159,6 +175,7 @@
             android:layout_marginBottom="4dp"
             android:text="@string/jezik_izdanja"
             android:textColor="#000000"
+            android:textStyle="bold"
             android:textSize="16sp" />
 
         <EditText
@@ -168,6 +185,7 @@
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_background"
             android:hint="@string/unesite_jezik_izdanja"
+            android:padding="4dp"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -178,6 +196,7 @@
             android:layout_marginBottom="4dp"
             android:text="@string/broj_stranica"
             android:textColor="#000000"
+            android:textStyle="bold"
             android:textSize="16sp" />
 
         <EditText
@@ -188,6 +207,8 @@
             android:background="@drawable/edittext_background"
             android:hint="@string/unesite_broj_stranica"
             android:inputType="number"
+
+            android:padding="4dp"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -198,6 +219,7 @@
             android:layout_marginBottom="4dp"
             android:text="@string/uvez"
             android:textColor="#000000"
+            android:textStyle="bold"
             android:textSize="16sp" />
 
         <EditText
@@ -207,6 +229,7 @@
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_background"
             android:hint="@string/unesite_vrstu_uveza"
+            android:padding="4dp"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -218,6 +241,7 @@
             android:layout_marginBottom="4dp"
             android:text="@string/opis"
             android:textColor="#000000"
+            android:textStyle="bold"
             android:textSize="16sp" />
 
         <EditText
@@ -230,6 +254,7 @@
             android:hint="@string/unesite_opis_knjige"
             android:inputType="textMultiLine"
             android:minHeight="100dp"
+            android:padding="4dp"
             android:textColor="#000000"
             android:textSize="16sp" />
 
